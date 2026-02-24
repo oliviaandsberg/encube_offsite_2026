@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Office Not Found - Encube Offsite 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', Arial, sans-serif; background: #FDFCFF; color: #17181D; }
+
+.dot-grid-hero { background-color: #FDFCFF; background-image: radial-gradient(circle, rgba(125,57,237,0.15) 1.5px, transparent 1.5px); background-size: 32px 32px; }
+.dot-grid-light { background-color: #F9F7FF; background-image: radial-gradient(circle, rgba(125,57,237,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; }
+.dot-grid-dark { background-color: #17181D; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,252,255,0.88); backdrop-filter: blur(16px); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(125,57,237,0.1); }
+.nav-logo { display:flex; align-items:center; }
+.nav-cta { background: #7D39ED; color: #fff; padding: 9px 22px; border-radius: 10px 3px 3px 3px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; transition: background 0.2s; }
+.nav-cta:hover { background: #6B2ED6; }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(125,57,237,0.08) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(130,107,246,0.06) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 80% 10%, rgba(219,0,255,0.04) 0%, transparent 60%); pointer-events: none; }
+.hero > * { position: relative; z-index: 1; }
+
+.cursor { position: absolute; display: flex; align-items: flex-start; pointer-events: none; z-index: 10; }
+.cursor-tag { margin-top: 15px; margin-left: 2px; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 500; color: #fff; white-space: nowrap; box-shadow: 0 2px 10px rgba(0,0,0,0.12); border: 1.5px solid rgba(255,255,255,0.8); }
+.cursor-olivia { top: 16%; left: 9%; animation: floatA 7s ease-in-out infinite; }
+.cursor-caroline { top: 28%; right: 7%; animation: floatB 8s ease-in-out infinite; }
+.cursor-team { bottom: 22%; left: 16%; animation: floatC 6s ease-in-out infinite; }
+
+@keyframes floatA { 0%, 100% { transform: translate(0px, 0px); } 33% { transform: translate(6px, -10px); } 66% { transform: translate(-4px, -5px); } }
+@keyframes floatB { 0%, 100% { transform: translate(0px, 0px); } 33% { transform: translate(-8px, -8px); } 66% { transform: translate(4px, -14px); } }
+@keyframes floatC { 0%, 100% { transform: translate(0px, 0px); } 33% { transform: translate(5px, -12px); } 66% { transform: translate(-3px, -6px); } }
+
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(125,57,237,0.08); border: 1px solid rgba(125,57,237,0.2); border-radius: 100px; padding: 7px 18px; font-size: 13px; color: #7D39ED; letter-spacing: -0.01em; margin-bottom: 32px; }
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #7D39ED; box-shadow: 0 0 6px rgba(125,57,237,0.6); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
+
+.hero h1 { font-size: clamp(56px, 8vw, 96px); font-weight: 700; color: #17181D; letter-spacing: -0.02em; line-height: 0.9; margin-bottom: 24px; }
+.hero h1 em { font-style: normal; background: linear-gradient(90deg, #DB00FF 0%, #7D39ED 40%, #00A2FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 18px; color: #51566D; letter-spacing: -0.01em; line-height: 1.5; max-width: 480px; margin-bottom: 48px; }
+
+.hero-meta { display: flex; gap: 0; align-items: stretch; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; border: 1px solid rgba(125,57,237,0.15); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.7); backdrop-filter: blur(8px); box-shadow: 0 2px 16px rgba(125,57,237,0.06); }
+.hero-meta-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 18px 32px; border-right: 1px solid rgba(125,57,237,0.1); }
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-label { font-size: 10px; color: #9299A7; text-transform: uppercase; letter-spacing: 0.1em; }
+.hero-meta-value { font-size: 15px; color: #17181D; letter-spacing: -0.01em; font-weight: 500; }
+
+.hero-cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: #7D39ED; color: #fff; padding: 14px 32px; border-radius: 10px 3px 3px 3px; font-size: 15px; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(125,57,237,0.25); }
+.btn-primary:hover { background: #6B2ED6; transform: translateY(-1px); }
+.btn-ghost { background: rgba(255,255,255,0.8); color: #17181D; padding: 14px 32px; border-radius: 10px 3px 3px 3px; font-size: 15px; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; border: 1px solid rgba(125,57,237,0.2); transition: background 0.2s, border-color 0.2s; }
+.btn-ghost:hover { background: rgba(125,57,237,0.06); border-color: rgba(125,57,237,0.35); }
+
+.update-banner { background: rgba(125,57,237,0.06); border-top: 1px solid rgba(125,57,237,0.12); border-bottom: 1px solid rgba(125,57,237,0.12); padding: 13px 24px; text-align: center; font-size: 13px; color: #7D39ED; letter-spacing: -0.01em; }
+
+section { padding: 88px 24px; }
+.container { max-width: 900px; margin: 0 auto; }
+.section-eyebrow { font-size: 11px; color: #7D39ED; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+.section-title { font-size: clamp(36px, 4vw, 52px); font-weight: 700; letter-spacing: -0.02em; line-height: 0.92; color: #17181D; margin-bottom: 14px; }
+.section-desc { font-size: 15px; color: #51566D; line-height: 1.65; letter-spacing: -0.01em; max-width: 520px; }
+
+.facts-section { background: #FFFFFF; }
+.facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(125,57,237,0.12); border-radius: 16px; overflow: hidden; margin-top: 52px; box-shadow: 0 2px 20px rgba(125,57,237,0.06); }
+.fact-card { background: #FFFFFF; padding: 28px 24px; border-right: 1px solid rgba(125,57,237,0.08); border-bottom: 1px solid rgba(125,57,237,0.08); }
+.fact-card:nth-child(3n) { border-right: none; }
+.fact-card:nth-child(n+4) { border-bottom: none; }
+.fact-icon { font-size: 22px; margin-bottom: 14px; }
+.fact-label { font-size: 10px; color: #9299A7; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+.fact-value { font-size: 19px; color: #17181D; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 4px; font-weight: 500; }
+.fact-sub { font-size: 12px; color: #9299A7; line-height: 1.45; }
+
+.faq-section { background: #F9F7FF; background-image: radial-gradient(circle, rgba(125,57,237,0.1) 1.5px, transparent 1.5px); background-size: 32px 32px; }
+.faq-list { margin-top: 52px; border: 1px solid rgba(125,57,237,0.12); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 2px 20px rgba(125,57,237,0.06); }
+.faq-item { border-bottom: 1px solid rgba(125,57,237,0.08); }
+.faq-item:last-child { border-bottom: none; }
+.faq-question { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; cursor: pointer; font-size: 16px; font-weight: 500; color: #17181D; letter-spacing: -0.01em; user-select: none; transition: background 0.15s; }
+.faq-question:hover { background: #F9F7FF; }
+.faq-chevron { width: 18px; height: 18px; flex-shrink: 0; color: #9299A7; transition: transform 0.2s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-item.open .faq-question { background: #F9F7FF; color: #7D39ED; }
+.faq-answer { display: none; padding: 16px 24px 22px; font-size: 14px; color: #51566D; line-height: 1.7; letter-spacing: -0.01em; border-top: 1px solid rgba(125,57,237,0.08); }
+.faq-item.open .faq-answer { display: block; }
+.faq-answer strong { color: #17181D; font-weight: 500; }
+
+.guide-section { padding: 96px 0; background-color: #FDFCFF; background-image: radial-gradient(circle, rgba(23,24,29,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; }
+.tbd-notice { display: flex; align-items: center; gap: 10px; background: #FFFAC3; border: 1px solid #FEED3F; border-radius: 10px; padding: 12px 18px; margin-bottom: 36px; font-size: 13px; color: #5A4203; }
+.tbd-badge { background: #FFC700; color: #17181D; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; flex-shrink: 0; }
+.guide-grid {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-card-img { height: 130px; background-color: #F5F2FF; background-image: radial-gradient(circle, rgba(125,57,237,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; display: flex; align-items: center; justify-content: center; }
+.guide-card-img-text { font-size: 11px; color: #9299A7; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 4px; }
+
+
+
+
+
+.map-placeholder { height: 340px; background-color: #F5F2FF; background-image: radial-gradient(circle, rgba(125,57,237,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(125,57,237,0.1); }
+.map-placeholder-icon { font-size: 28px; opacity: 0.4; }
+.map-placeholder-text { font-size: 13px; color: #9299A7; }
+
+.footer-cta { text-align: center; padding: 96px 24px; position: relative; overflow: hidden; }
+.footer-cta::before { display: none; }
+.footer-cta > * { position: relative; z-index: 1; }
+.footer-cta h2 { font-size: clamp(44px, 6vw, 72px); font-weight: 700; color: #FFFFFF; letter-spacing: -0.02em; line-height: 0.9; margin-bottom: 18px; }
+.footer-cta p { font-size: 16px; color: #9299A7; margin-bottom: 40px; letter-spacing: -0.01em; }
+.footer-cta .btn-primary { font-size: 16px; padding: 18px 48px; box-shadow: 0 4px 24px rgba(125,57,237,0.4); }
+
+footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-logo { display:flex; align-items:center; }
+.footer-copy { font-size: 12px; color: #51566D; }
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .hero-meta { flex-direction: column; }
+  .hero-meta-item { border-right: none !important; border-bottom: 1px solid rgba(125,57,237,0.1); }
+  .hero-meta-item:last-child { border-bottom: none; }
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .cursor-team { display: none; }
+  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+}
+
+.guide-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guide-hotel-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+  position: relative;
+}
+.guide-hotel-emoji {
+  font-size: 100px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
+}
+.guide-hotel-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #17181D;
+  letter-spacing: -0.02em;
+  background: white;
+  padding: 6px 16px;
+  border-radius: 100px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.guide-card {
+  border-radius: 4px;
+  box-shadow: 4px 6px 16px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.10);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: absolute;
+  width: 160px;
+}
+
+.guide-card-body { padding: 14px 14px 12px; display: flex; flex-direction: column; }
+.guide-card-tag { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; display: inline-block; color: rgba(0,0,0,0.5); }
+.guide-card-title { font-size: 13px; font-weight: 700; color: #17181D; margin-bottom: 5px; letter-spacing: -0.01em; line-height: 1.2; }
+.guide-card-desc { font-size: 11px; color: rgba(0,0,0,0.65); line-height: 1.45; flex: 1; }
+.guide-card-dist { font-size: 10px; font-weight: 500; margin-top: 10px; padding-top: 8px; letter-spacing: -0.01em; color: rgba(0,0,0,0.5); }
+
+.footer-emoji { position: absolute; font-size: 28px; pointer-events: none; user-select: none; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25)); z-index: 0; }
+.fe-1 { top: 15%; left: 8%; animation: floatA 7s ease-in-out infinite; }
+.fe-2 { top: 10%; left: 30%; animation: floatB 9s ease-in-out infinite; }
+.fe-3 { top: 15%; right: 28%; animation: floatC 6s ease-in-out infinite; }
+.fe-4 { top: 10%; right: 8%; animation: floatA 8s ease-in-out infinite 1s; }
+.fe-5 { bottom: 18%; left: 8%; animation: floatB 7.5s ease-in-out infinite 0.5s; }
+.fe-6 { bottom: 12%; left: 34%; animation: floatC 8.5s ease-in-out infinite 1.5s; }
+.fe-7 { bottom: 18%; right: 8%; animation: floatA 6.5s ease-in-out infinite 2s; }
+
+.fe-8 { top: 45%; left: 14%; animation: floatB 9s ease-in-out infinite 0.8s; }
+.fe-9 { top: 8%; left: 44%; animation: floatC 7s ease-in-out infinite 1.2s; }
+.fe-10 { bottom: 40%; right: 14%; animation: floatA 8s ease-in-out infinite 0.3s; }
+.fe-11 { bottom: 10%; right: 28%; animation: floatB 6.5s ease-in-out infinite 1.8s; }
+
+.fe-12 { top: 20%; left: 18%; animation: floatC 7.5s ease-in-out infinite 0.6s; }
+.fe-13 { top: 12%; right: 20%; animation: floatA 8s ease-in-out infinite 1.4s; }
+.fe-14 { bottom: 22%; left: 20%; animation: floatB 7s ease-in-out infinite 0.9s; }
+.fe-15 { bottom: 18%; right: 20%; animation: floatC 9s ease-in-out infinite 1.1s; }
+.fe-16 { top: 42%; right: 20%; animation: floatA 6.5s ease-in-out infinite 1.7s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQ4IiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU0OCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82Nl8xMTUpIj4KPHBhdGggZD0iTTQ5MC41NjkgNTUuMDY1OUM0OTMuMTI5IDUwLjE5MTEgNDk2LjY2MyA0Ni41MzQ5IDUwMS4yOTQgNDMuODUzOEM1MDUuOTI1IDQxLjE3MjYgNTExLjE2NSAzOS44MzIgNTE3LjEzNyAzOS44MzJDNTIzLjEwOSAzOS44MzIgNTI4LjM0OSA0MS4wNTA3IDUzMi45OCA0My40ODgyQzUzNy42MTIgNDUuOTI1NiA1NDEuMTQ2IDQ5LjQ1OTggNTQzLjgyNyA1My44NDcyQzU0Ni41MDggNTguMzU2NCA1NDcuODQ5IDYzLjU5NjkgNTQ3Ljk3MSA2OS41Njg2QzU0Ny45NzEgNzEuMjc0OCA1NDcuODQ5IDcyLjg1OTEgNTQ3LjYwNSA3NC41NjUzSDUwMC41NjNWNzUuMjk2NUM1MDAuODA2IDgwLjc4MDcgNTAyLjUxMyA4NS4wNDYyIDUwNS42ODEgODguMjE0OEM1MDguNzI4IDkxLjM4MzUgNTEyLjg3MiA5Mi45Njc4IDUxNy45OSA5Mi45Njc4QzUyMi4wMTIgOTIuOTY3OCA1MjUuNDI0IDkyLjExNDcgNTI4LjIyNyA5MC4xNjQ4QzUzMC45MDkgODguMjE0OCA1MzIuNzM3IDg1LjUzMzcgNTMzLjcxMiA4MS45OTk0SDU0Ni44NzRDNTQ1LjY1NSA4OC4zMzY3IDU0Mi42MDggOTMuNTc3MiA1MzcuNjEyIDk3LjU5ODlDNTMyLjYxNSAxMDEuNzQzIDUyNi4zOTkgMTAzLjY5MiA1MTguOTY1IDEwMy42OTJDNTEyLjM4NCAxMDMuNjkyIDUwNi43NzggMTAyLjQ3NCA1MDEuOTAzIDk5Ljc5MjZDNDk3LjAyOCA5Ny4xMTE0IDQ5My4zNzIgOTMuNDU1MyA0OTAuNjkxIDg4LjU4MDVDNDg4LjAxIDgzLjgyNzUgNDg2Ljc5MSA3OC4yMjE0IDQ4Ni43OTEgNzEuODg0MUM0ODYuNzkxIDY1LjU0NjggNDg4LjAxIDU5Ljk0MDggNDkwLjU2OSA1NS4wNjU5Wk01MzQuNTY1IDY0LjkzNzVDNTMzLjk1NSA2MC40MjgyIDUzMi4xMjcgNTYuODk0IDUyOS4wODEgNTQuMzM0N0M1MjYuMDM0IDUxLjc3NTQgNTIyLjI1NiA1MC40MzQ4IDUxNy42MjUgNTAuNDM0OEM1MTMuMjM3IDUwLjQzNDggNTA5LjU4MSA1MS43NzU0IDUwNi40MTIgNTQuNDU2NkM1MDMuMjQ0IDU3LjEzNzcgNTAxLjUzOCA2MC41NTAxIDUwMS4wNSA2NC45Mzc1SDUzNC41NjVaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00NjUuNzc3IDQzLjczMThDNDcwLjE2NSA0Ni4yOTExIDQ3My42OTkgNDkuOTQ3MiA0NzYuMjU4IDU0LjcwMDJDNDc4LjY5NiA1OS41NzUgNDgwLjAzNiA2NS4xODExIDQ4MC4wMzYgNzEuNzYyMUM0ODAuMDM2IDc4LjA5OTQgNDc4LjY5NiA4My41ODM2IDQ3Ni4yNTggODguNDU4NUM0NzMuNjk5IDkzLjMzMzMgNDcwLjE2NSA5Ni45ODk0IDQ2NS43NzcgOTkuNjcwNkM0NjEuMjY4IDEwMi4zNTIgNDU2LjE0OSAxMDMuNjkyIDQ1MC41NDMgMTAzLjY5MkM0NDUuOTEyIDEwMy42OTIgNDQxLjg5IDEwMi44MzkgNDM4LjQ3OCAxMDEuMTMzQzQzNS4wNjYgOTkuNDI2OCA0MzIuMjYzIDk2Ljk4OTQgNDMwLjE5MSA5My45NDI2TDQyOC42MDcgMTAyLjk2MUg0MTcuMTUxVjE3LjY1MTRINDMwLjMxM1Y0OS44MjUzQzQzNS4xODggNDMuMjQ0MyA0NDIuMDEyIDM5LjgzMTkgNDUwLjU0MyAzOS44MzE5QzQ1Ni4xNDkgMzkuODMxOSA0NjEuMjY4IDQxLjE3MjUgNDY1Ljc3NyA0My43MzE4Wk00NjEuNTEyIDg2Ljg3NDFDNDY0LjkyNCA4Mi45NzQzIDQ2Ni42MyA3Ny45Nzc1IDQ2Ni42MyA3MS43NjIxQzQ2Ni42MyA2NS42Njg2IDQ2NC45MjQgNjAuNzkzNyA0NjEuNTEyIDU2Ljg5MzhDNDU4LjA5OSA1Mi45OTQgNDUzLjcxMiA1MS4wNDQgNDQ4LjM1IDUxLjA0NEM0NDIuODY1IDUxLjA0NCA0MzguNDc4IDUyLjk5NCA0MzUuMTg4IDU2Ljc3MkM0MzEuNzc1IDYwLjY3MTkgNDMwLjE5MSA2NS41NDY3IDQzMC4xOTEgNzEuNjQwM0M0MzAuMTkxIDc3Ljg1NTcgNDMxLjc3NSA4Mi44NTI0IDQzNS4xODggODYuNzUyM0M0MzguNDc4IDkwLjY1MjEgNDQyLjg2NSA5Mi42MDIxIDQ0OC4zNSA5Mi42MDIxQzQ1My43MTIgOTIuNjAyMSA0NTguMDk5IDkwLjc3NCA0NjEuNTEyIDg2Ljg3NDFaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00MDQuMDA5IDQwLjU2MzVWMTAyLjk2MUgzOTIuNDMxTDM5MC45NjkgOTUuMDM5OEMzODYuMjE2IDEwMC44OSAzNzkuNzU3IDEwMy42OTMgMzcxLjcxMyAxMDMuNjkzQzM2NC40MDEgMTAzLjY5MyAzNTguNDI5IDEwMS40OTkgMzUzLjkyIDk2Ljg2NzlDMzQ5LjI4OSA5Mi4zNTg3IDM0Ny4wOTUgODUuMDQ2NCAzNDcuMDk1IDc0LjkzMTFWNDAuNTYzNUgzNjAuMjU4VjczLjU5MDVDMzYwLjI1OCA3OS42ODQxIDM2MS40NzYgODQuMzE1MiAzNjMuOTE0IDg3LjQ4MzhDMzY2LjM1MSA5MC42NTI1IDM2OS44ODUgOTIuMjM2OCAzNzQuNzYgOTIuMjM2OEMzNzkuNzU3IDkyLjIzNjggMzgzLjY1NyA5MC40MDg3IDM4Ni41ODIgODYuNzUyNkMzODkuMzg1IDgzLjA5NjUgMzkwLjg0NyA3Ny45Nzc5IDM5MC44NDcgNzEuNTE4N1Y0MC41NjM1SDQwNC4wMDlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00MDQuMDA5IDQwLjU2MzVWMTAyLjk2MUgzOTIuNDMxTDM5MC45NjkgOTUuMDM5OEMzODYuMjE2IDEwMC44OSAzNzkuNzU3IDEwMy42OTMgMzcxLjcxMyAxMDMuNjkzQzM2NC40MDEgMTAzLjY5MyAzNTguNDI5IDEwMS40OTkgMzUzLjkyIDk2Ljg2NzlDMzQ5LjI4OSA5Mi4zNTg3IDM0Ny4wOTUgODUuMDQ2NCAzNDcuMDk1IDc0LjkzMTFWNDAuNTYzNUgzNjAuMjU4VjczLjU5MDVDMzYwLjI1OCA3OS42ODQxIDM2MS40NzYgODQuMzE1MiAzNjMuOTE0IDg3LjQ4MzhDMzY2LjM1MSA5MC42NTI1IDM2OS44ODUgOTIuMjM2OCAzNzQuNzYgOTIuMjM2OEMzNzkuNzU3IDkyLjIzNjggMzgzLjY1NyA5MC40MDg3IDM4Ni41ODIgODYuNzUyNkMzODkuMzg1IDgzLjA5NjUgMzkwLjg0NyA3Ny45Nzc5IDM5MC44NDcgNzEuNTE4N1Y0MC41NjM1SDQwNC4wMDlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0zMjkuMTUzIDk3LjU5ODlDMzI0LjAzNSAxMDEuNzQzIDMxNy41NzUgMTAzLjY5MiAzMDkuNzc2IDEwMy42OTJDMzAzLjU2IDEwMy42OTIgMjk4LjA3NiAxMDIuNDc0IDI5My40NDUgOTkuNzkyNkMyODguNjkyIDk3LjExMTQgMjg1LjAzNiA5My4zMzM0IDI4Mi40NzYgODguNDU4NkMyNzkuOTE3IDgzLjU4MzcgMjc4LjY5OCA3Ny45Nzc3IDI3OC42OTggNzEuNjQwNEMyNzguNjk4IDY1LjMwMzEgMjc5LjkxNyA1OS44MTg5IDI4Mi41OTggNTQuOTQ0QzI4NS4xNTggNTAuMTkxMSAyODguODE0IDQ2LjUzNDkgMjkzLjU2NyA0My44NTM4QzI5OC4zMiA0MS4xNzI2IDMwMy44MDQgMzkuODMyIDMxMC4xNDEgMzkuODMyQzMxNy45NDEgMzkuODMyIDMyNC4yNzggNDEuOTAzOCAzMjkuMjc1IDQ2LjA0NzVDMzM0LjE1IDUwLjE5MTEgMzM3LjMxOCA1NS42NzUzIDMzOC41MzcgNjIuNzQzOEgzMjUuMDFDMzI0LjAzNSA1OS4yMDk1IDMyMi4zMjggNTYuNDA2NSAzMTkuNjQ3IDU0LjIxMjhDMzE2Ljk2NiA1Mi4xNDEgMzEzLjY3NSA1MS4wNDQyIDMwOS43NzYgNTEuMDQ0MkMzMDQuNDEzIDUxLjA0NDIgMzAwLjE0OCA1Mi45OTQxIDI5Ni45NzkgNTYuNzcyMUMyOTMuODEgNjAuNjcyIDI5Mi4yMjYgNjUuNTQ2OCAyOTIuMjI2IDcxLjY0MDRDMjkyLjIyNiA3Ny44NTU4IDI5My44MSA4Mi44NTI1IDI5Ni45NzkgODYuNzUyNEMzMDAuMTQ4IDkwLjY1MjMgMzA0LjQxMyA5Mi40ODAzIDMwOS43NzYgOTIuNDgwM0MzMTMuNzk3IDkyLjQ4MDMgMzE3LjIxIDkxLjUwNTQgMzE5Ljg5MSA4OS4zMTE3QzMyMi41NzIgODcuMTE4IDMyNC4yNzggODQuMTkzMSAzMjUuMTMxIDgwLjUzN0gzMzguNTM3QzMzNy4zMTggODcuODQ5MiAzMzQuMTUgOTMuNDU1MyAzMjkuMTUzIDk3LjU5ODlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0xNDQuMzkyIDE3LjY1MTRIMjAwLjA4N1YzMC4wODIySDE1OC40MDdWNTMuNzI1MkgxOTIuNzc0VjY1Ljc5MDRIMTU4LjQwN1Y5MC41MzAzSDIwMS41NDlWMTAyLjk2MUgxNDQuMzkyVjE3LjY1MTRaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0yNjIuOTAyIDQ2LjY1NjhDMjY3LjUzMyA1MS4yODc5IDI2OS45NyA1OC42MDAyIDI2OS45NyA2OC41OTM2VjEwMi45NjFIMjU2LjY4NlY2OS4zMjQ4QzI1Ni42ODYgNjMuNDc1IDI1NS4zNDYgNTguOTY1OCAyNTIuOTA4IDU1Ljc5NzFDMjUwLjM0OSA1Mi43NTA0IDI0Ni42OTMgNTEuMTY2IDI0MS44MTggNTEuMTY2QzIzNi41NzcgNTEuMTY2IDIzMi40MzQgNTIuOTk0MSAyMjkuNTA5IDU2LjY1MDJDMjI2LjU4NCA2MC4zMDY0IDIyNS4xMjIgNjUuMTgxMiAyMjUuMTIyIDcxLjUxODVWMTAyLjk2MUgyMTEuOTU5VjQwLjU2MzNIMjIzLjQxNUwyMjQuODc4IDQ4LjcyODZDMjI5LjUwOSA0Mi44Nzg4IDIzNi4yMTIgMzkuODMyIDI0NC44NjUgMzkuODMyQzI1Mi4xNzcgMzkuODMyIDI1OC4yNyA0Mi4xNDc2IDI2Mi45MDIgNDYuNjU2OFoiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDUgNjAuMDAxMkw5Ni4wMDQ3IDQ4LjAwMUg4NC4wMDQ1SDQ4LjAwMzhIMzYuMDAzNUgyNC4wMDMzSDE2LjIzMTlDMTQuODk5OSA0OC4wMDEgMTMuNDA5NSA0OC4zNzc4IDEyLjAwMyA0OS4wMTE0QzEwLjY2NjIgNDkuNjEzOCA5LjQwNjE5IDUwLjQ0OSA4LjQyOTM3IDUxLjQxMTVDOC4zODg1NyA1MS40NDk5IDguMzQ3NzcgNTEuNDg4MiA4LjMwOTM3IDUxLjUyNjZMMy40NTQwNSA1Ni40ODA0QzMuNDM0ODUgNTYuNDk5NiAzLjQyMDQ1IDU2LjUxODcgMy40MDEyNSA1Ni41MzU1QzIuNDE0ODMgNTcuNTUzMiAxLjYyNzYyIDU4LjcyOTIgMS4wNTg4MSA1OS45OTg4QzAuMzY5OTkyIDYxLjUzNDkgMC4wMDI4MDc2MiA2My4yMTI1IDAuMDAyODA3NjIgNjQuOTI4NVY3MS45OTkxVjk1Ljk5OTVWMTAzLjA3QzAuMDAyODA3NjIgMTA0Ljc4NiAwLjM2OTk5MiAxMDYuNDYxIDEuMDU4ODEgMTA4QzEuNTEyNDEgMTA5LjAxMyAyLjEwNTIyIDEwOS45NjMgMi44MjUyNCAxMTAuODIyQzMuMDI0NDQgMTExLjA2IDMuMjMzMjcgMTExLjI5NSAzLjQ1MTY4IDExMS41MThMOC4zMDY5NyAxMTYuNDcyQzguNjgzNzggMTE2Ljg1NiA5LjEwNjE4IDExNy4yMjEgOS41NjIxOSAxMTcuNTYyQzEwLjMwNjIgMTE4LjExNiAxMS4xMzY2IDExOC42MDEgMTIuMDAwNiAxMTguOTlDMTMuNDA3MSAxMTkuNjIzIDE0Ljg5NzUgMTIwIDE2LjIyNzEgMTIwSDk1Ljk5OTlWMTA4Vjk1Ljk5OTVIMzUuOTk4N0gyMy45OTg1VjcxLjk5OTFIMzUuOTk4N0g0Ny45OTlINTkuOTk5Mkg2Ny4yNDk3QzY5LjQwNSA3MS45OTkxIDcxLjQ5NzggNzEuMzg5NCA3My4zMDAyIDcwLjI2ODZDNzMuMzMxNCA3MC4yNDk0IDczLjM2MjcgNzAuMjI3OCA3My4zOTYzIDcwLjIwODZDNzMuNDc3OSA3MC4xNTU4IDczLjU2MTkgNzAuMTA1NCA3My42NDM1IDcwLjA1MDJDNzQuNjIwMyA2OS40MTE4IDc1LjQ5ODcgNjguNjM2NiA3Ni4yNDk5IDY3Ljc0ODZMODMuOTk5NyA1OS45OTg4TDg0LjAwNDUgNjAuMDAxMloiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDEgMEgxNi4yMzE1QzEzLjU4MTkgMCAxMC4zMDM0IDEuNDkyODMgOC4zMDY1NiAzLjUyODA3TDMuNDUxMjcgOC40ODE3N0MxLjI0MDgzIDEwLjczNzggMCAxMy43NzE1IDAgMTYuOTI5OVYyNC4wMDA1SDk2LjAwMTlWMEg4NC4wMDE3SDg0LjAwNDFaIiBmaWxsPSIjMTcxODFEIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNjZfMTE1Ij4KPHJlY3Qgd2lkdGg9IjU0OCIgaGVpZ2h0PSIxMjAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" alt="Encube" style="height:24px;display:block;" /></div>
+  <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="nav-cta">Register now →</a>
+</nav>
+
+<section class="hero dot-grid-hero" id="top">
+  <div class="cursor cursor-olivia">
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M1 1L15 9L8 11L5.5 19L1 1Z" fill="#7D39ED" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    <div class="cursor-tag" style="background:#7D39ED;">Encube</div>
+  </div>
+  <div class="cursor cursor-caroline">
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M1 1L15 9L8 11L5.5 19L1 1Z" fill="#65A9F1" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    <div class="cursor-tag" style="background:#65A9F1;">Palma</div>
+  </div>
+  <div class="cursor cursor-team">
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M1 1L15 9L8 11L5.5 19L1 1Z" fill="#E6702E" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    <div class="cursor-tag" style="background:#E6702E;">J. Statham</div>
+  </div>
+
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    Encube Offsite 2026
+  </div>
+
+  <h1>404 Office<br><em>not found</em></h1>
+  <p class="hero-sub">We're trading the office for Palma: sun, good company and the whole team together.</p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Dates</span>
+      <span class="hero-meta-value">April 19-24, 2026</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Location</span>
+      <span class="hero-meta-value">Palma, Mallorca</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Hotel</span>
+      <span class="hero-meta-value"><a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a></span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">RSVP latest</span>
+      <span class="hero-meta-value">March 9</span>
+    </div>
+  </div>
+
+  <div class="hero-cta-group">
+    <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="btn-primary">Register now →</a>
+    <a href="#faq" class="btn-ghost">Read the FAQ</a>
+  </div>
+</section>
+
+<div class="update-banner">✦ This page will be updated with the latest information, check back soon.</div>
+
+<section class="facts-section" id="details">
+  <div class="container">
+    <p class="section-eyebrow">The details</p>
+    <h2 class="section-title">What you need to know</h2>
+    <p class="section-desc">Here's the short version. For everything else, check the FAQ below.</p>
+    <div class="facts-grid">
+      <div class="fact-card"><div class="fact-icon">✈️</div><div class="fact-label">Arrive</div><div class="fact-value">Sunday, April 19</div><div class="fact-sub">We kick off first thing Monday morning</div></div>
+      <div class="fact-card"><div class="fact-icon">🏝️</div><div class="fact-label">Location</div><div class="fact-value">Palma, Mallorca</div><div class="fact-sub"><a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a></div></div>
+      <div class="fact-card"><div class="fact-icon">🏨</div><div class="fact-label">Hotel covered</div><div class="fact-value">April 19-24</div><div class="fact-sub">Sun night to Fri checkout. Extra nights on you.</div></div>
+      <div class="fact-card"><div class="fact-icon">👟</div><div class="fact-label">Depart</div><div class="fact-value">Friday, April 24</div><div class="fact-sub">Offsite ends around lunchtime</div></div>
+      <div class="fact-card"><div class="fact-icon">✉️</div><div class="fact-label">Questions?</div><div class="fact-value">Olivia or Caroline</div><div class="fact-sub">We got you 💪🏼</div></div>
+      <div class="fact-card"><div class="fact-icon">📅</div><div class="fact-label">Agenda</div><div class="fact-value">Coming soon</div><div class="fact-sub">We're working on it, stay tuned 👀</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="container">
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-title">Got questions?</h2>
+    <p class="section-desc">We've tried to cover the most common ones. Can't find what you're looking for? Reach out to Olivia or Caroline.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Is attendance mandatory?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer">This offsite is an important part of how we build a strong team and culture at Encube. It's key for alignment, learning and collaboration across the company. While we understand that exceptional circumstances can arise, we expect everyone to join.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Want to come earlier or stay longer?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer">That's totally fine, extra nights are on you. Hotel is covered from Sunday night (April 19) to checkout on Friday (April 24). Interested in extending your stay? We'll send out a form where you can share your input, and we'll reserve the room for you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">When do I need to arrive? And when can I book my return flight?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer"><strong>Arrival:</strong> Sunday, April 19, we'll start first thing Monday morning.<br><br><strong>Departure:</strong> Friday, April 24, in the afternoon. The offsite ends around lunchtime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">How and when should I book my travel?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer">You'll book your own flights. Just make sure to save the receipts (with VAT included). And be reasonable with costs when booking.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">What will the agenda look like (work vs. social time)?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer">We know you're curious! 👀 We're working on this and will let you know as soon as possible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Who should I contact if I have questions?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer">Olivia or Caroline 💪🏼</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">How do expenses and reimbursements work?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
+        <div class="faq-answer"><strong>Swedish employees:</strong> Submit flight expenses with valid receipts (including VAT where applicable). Approved expenses will be reimbursed mid-month / in connection with the regular payroll run.<br><br><strong>Everyone else:</strong> Add the expenses to your monthly invoice and we pay the expenses as part of your invoice payment. We still need a scan of the receipt and it needs to be a VAT receipt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="guide">
+  <div class="container">
+    <p class="section-eyebrow">Palma Guide</p>
+    <h2 class="section-title">Things to do around the hotel</h2>
+    <p class="section-desc" style="margin-bottom:32px;">Our picks around <a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a> — distances are walking distance from the hotel.</p>
+    <div class="guide-grid"><div class="guide-canvas">
+      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-4deg);left:2%;top:3%;"><div class="guide-card-body"><div class="guide-card-tag">🏰 Hike</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Castillo+de+Bellver/@39.5638434,2.6194231,15z/data=!4m6!3m5!1s0x12979271143eb477:0xc8d6aed330d9ffa1!8m2!3d39.5638434!4d2.6194231!16zL20vMGxranY?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Castell de Bellver</a></div><div class="guide-card-desc">A nice hike from the hotel to an ancient castle surrounded by walls and trees. 4€ entrance.</div><div class="guide-card-dist">0.6 km away</div></div></div>
+      <div class="guide-card" style="background:#65F1AD;transform:rotate(3deg);left:30%;top:0%;"><div class="guide-card-body"><div class="guide-card-tag">🥾 Viewpoint</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Mirador+del+Castillo+de+Bellver/@39.5643281,2.6207516,15z/data=!4m14!1m7!3m6!1s0x12979271143eb477:0xc8d6aed330d9ffa1!2sCastillo+de+Bellver!8m2!3d39.5638434!4d2.6194231!16zL20vMGxranY!3m5!1s0x129793bdb44d982f:0x2cd7c6c0e2807b21!8m2!3d39.5643281!4d2.6207516!16s%2Fg%2F11pcmxrf8m?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Viewpoint & Hike</a></div><div class="guide-card-desc">Walk in the forest surrounding Castell de Bellver and take in the views from the viewpoint. Free.</div><div class="guide-card-dist">0.6 km away</div></div></div>
+      <div class="guide-card" style="background:#65A9F1;transform:rotate(-2deg);left:60%;top:1%;"><div class="guide-card-body"><div class="guide-card-tag">🌅 Morning walk</div><div class="guide-card-title"><a href="https://www.google.com/maps/search/39.560097,+2.627013?entry=tts&g_ep=EgoyMDI2MDEyMS4wIPu8ASoASAFQAw%3D%3D&skid=f905af19-dd5e-4591-8a8a-87ca33ff4a14" target="_blank" style="color:#7D39ED;text-decoration:none;">Seafront Promenade</a></div><div class="guide-card-desc">Just a 5-minute walk from the hotel. A relaxed stroll along the waterfront. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#F5C383;transform:rotate(5deg);left:84%;top:2%;"><div class="guide-card-body"><div class="guide-card-tag">⛪ Cathedral</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Catedral-Bas%C3%ADlica+de+Santa+Mar%C3%ADa+de+Mallorca/@39.5655231,2.6500923,16z/data=!4m6!3m5!1s0x129792457daf8f55:0x540c9be89afd81aa!8m2!3d39.5674251!4d2.6482994!16zL20vMDdua3du?entry=tts&g_ep=EgoyMDI0MTAyMC4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Basílica de Santa María</a></div><div class="guide-card-desc">Palma's iconic cathedral, right by the sea. 10€ entrance.</div><div class="guide-card-dist">2.2 km away</div></div></div>
+      <div class="guide-hotel-center">
+        <div class="guide-hotel-emoji">🏨</div>
+        <a href="https://www.hotelfeliz.com/" target="_blank" class="guide-hotel-name" style="text-decoration:none;">📍 Hotel Feliz</a>
+      </div>
+      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2.5deg);left:8%;top:40%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Parc+de+la+Mar/@39.5655231,2.6500923,16z/data=!4m6!3m5!1s0x129793fa51267ab9:0xb8111034ca7db41d!8m2!3d39.5655231!4d2.6500923!16s%2Fg%2F122fjlv0?entry=tts&g_ep=EgoyMDI0MTAyMC4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Parc de La Mar</a></div><div class="guide-card-desc">A lovely park right next to the Cathedral with views over the bay. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-3.5deg);left:76%;top:42%;"><div class="guide-card-body"><div class="guide-card-tag">🏛️ Architecture</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Royal+Palace+of+La+Almudaina/@39.5676435,2.6448713,16.49z/data=!4m6!3m5!1s0x1297924fe7f39a33:0x190ce2760a8aa900!8m2!3d39.5675708!4d2.64677!16s%2Fm%2F04f0s1t?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Palacio de la Almudaina</a></div><div class="guide-card-desc">The King's summer residence. Beautiful architecture visible from outside.</div><div class="guide-card-dist">2.0 km away</div></div></div>
+      <div class="guide-card" style="background:#65A9F1;transform:rotate(4deg);left:1%;top:76%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/S'Hort+del+Rei/@39.568073,2.6439121,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924503b729db:0x6d8132b42927a162!8m2!3d39.568073!4d2.646487!16s%2Fg%2F11bvsrqdp5?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">S'Hort del Rei</a></div><div class="guide-card-desc">A public park with fountains and trees right in the city centre. Free.</div><div class="guide-card-dist">2.0 km away</div></div></div>
+      <div class="guide-card" style="background:#65F1AD;transform:rotate(-1.5deg);left:28%;top:80%;"><div class="guide-card-body"><div class="guide-card-tag">🪨 Old Town</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Carrer+de+l'Estudi+General,+Centre,+07001+Palma,+Illes+Balears/@39.5683154,2.6464679,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924f8897f0a1:0x8bb7dd72cbac5418!8m2!3d39.5683154!4d2.6490428!16s%2Fg%2F11xdf2vxh?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Historical City Centre</a></div><div class="guide-card-desc">Narrow streets, stone buildings, shops and more. Start at Carrer de l'Estudi General.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2deg);left:58%;top:78%;"><div class="guide-card-body"><div class="guide-card-tag">🏙️ Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pl.+Major,+Centre,+Palma,+Illes+Balears/@39.5714082,2.649164,17z/data=!3m1!4b1!4m6!3m5!1s0x12979251b7ea3b15:0x71d0e4656460f1ea!8m2!3d39.5714082!4d2.6517389!16s%2Fg%2F11xmwml_s?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza Mayor</a></div><div class="guide-card-desc">The main square of Palma — great for people watching and a coffee break.</div><div class="guide-card-dist">2.6 km away</div></div></div>
+      <div class="guide-card" style="background:#F5C383;transform:rotate(-5deg);left:83%;top:75%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pla%C3%A7a+de+Cort,+Distrito+Centro,+07001+Palma,+Illes+Balears/@39.5697159,2.6472991,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924fe7630673:0xd114e77cc940e977!8m2!3d39.5697159!4d2.649874!16s%2Fg%2F11xcprgx3?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza de Cort</a></div><div class="guide-card-desc">A beautiful square with an ancient, monumental olive tree. Worth a detour.</div><div class="guide-card-dist">2.4 km away</div></div></div>
+    </div></div></div>
+  </div>
+</section>
+
+<section id="register" class="footer-cta dot-grid-dark">
+  <span class="footer-emoji fe-1">🌴</span>
+  <span class="footer-emoji fe-2">🐠</span>
+  <span class="footer-emoji fe-3">🍹</span>
+  <span class="footer-emoji fe-4">🤿</span>
+  <span class="footer-emoji fe-5">🦀</span>
+  <span class="footer-emoji fe-6">🇪🇸</span>
+  <span class="footer-emoji fe-7">😎</span>
+  <span class="footer-emoji fe-8">⛵️</span>
+  <span class="footer-emoji fe-9">☀️</span>
+  <span class="footer-emoji fe-10">👒</span>
+  <span class="footer-emoji fe-11">🍌</span>
+  <span class="footer-emoji fe-12">🫒</span>
+  <span class="footer-emoji fe-13">🧀</span>
+  <span class="footer-emoji fe-14">🌅</span>
+  <span class="footer-emoji fe-15">🦎</span>
+  <span class="footer-emoji fe-16">🪸</span>
+  <div class="container">
+    <h2>Ready to set sail?</h2>
+    <p>Don't just tell, show us. Register below and we'll see you in Palma.</p>
+    <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="btn-primary">Register now →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQ4IiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU0OCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82Nl85MCkiPgo8cGF0aCBkPSJNNDkwLjU2OSA1NS4wNjU5QzQ5My4xMjggNTAuMTkxMSA0OTYuNjYzIDQ2LjUzNDkgNTAxLjI5NCA0My44NTM4QzUwNS45MjUgNDEuMTcyNiA1MTEuMTY1IDM5LjgzMiA1MTcuMTM3IDM5LjgzMkM1MjMuMTA5IDM5LjgzMiA1MjguMzQ5IDQxLjA1MDcgNTMyLjk4IDQzLjQ4ODJDNTM3LjYxMSA0NS45MjU2IDU0MS4xNDYgNDkuNDU5OCA1NDMuODI3IDUzLjg0NzJDNTQ2LjUwOCA1OC4zNTY0IDU0Ny44NDkgNjMuNTk2OSA1NDcuOTcgNjkuNTY4NkM1NDcuOTcgNzEuMjc0OCA1NDcuODQ5IDcyLjg1OTEgNTQ3LjYwNSA3NC41NjUzSDUwMC41NjNWNzUuMjk2NUM1MDAuODA2IDgwLjc4MDcgNTAyLjUxMyA4NS4wNDYyIDUwNS42ODEgODguMjE0OEM1MDguNzI4IDkxLjM4MzUgNTEyLjg3MiA5Mi45Njc4IDUxNy45OSA5Mi45Njc4QzUyMi4wMTIgOTIuOTY3OCA1MjUuNDI0IDkyLjExNDcgNTI4LjIyNyA5MC4xNjQ4QzUzMC45MDggODguMjE0OCA1MzIuNzM3IDg1LjUzMzcgNTMzLjcxMSA4MS45OTk0SDU0Ni44NzRDNTQ1LjY1NSA4OC4zMzY3IDU0Mi42MDggOTMuNTc3MiA1MzcuNjExIDk3LjU5ODlDNTMyLjYxNSAxMDEuNzQzIDUyNi4zOTkgMTAzLjY5MiA1MTguOTY1IDEwMy42OTJDNTEyLjM4NCAxMDMuNjkyIDUwNi43NzggMTAyLjQ3NCA1MDEuOTAzIDk5Ljc5MjZDNDk3LjAyOCA5Ny4xMTE0IDQ5My4zNzIgOTMuNDU1MyA0OTAuNjkxIDg4LjU4MDVDNDg4LjAxIDgzLjgyNzUgNDg2Ljc5MSA3OC4yMjE0IDQ4Ni43OTEgNzEuODg0MUM0ODYuNzkxIDY1LjU0NjggNDg4LjAxIDU5Ljk0MDggNDkwLjU2OSA1NS4wNjU5Wk01MzQuNTY1IDY0LjkzNzVDNTMzLjk1NSA2MC40MjgyIDUzMi4xMjcgNTYuODk0IDUyOS4wOCA1NC4zMzQ3QzUyNi4wMzQgNTEuNzc1NCA1MjIuMjU2IDUwLjQzNDggNTE3LjYyNSA1MC40MzQ4QzUxMy4yMzcgNTAuNDM0OCA1MDkuNTgxIDUxLjc3NTQgNTA2LjQxMiA1NC40NTY2QzUwMy4yNDQgNTcuMTM3NyA1MDEuNTM4IDYwLjU1MDEgNTAxLjA1IDY0LjkzNzVINTM0LjU2NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00NjUuNzc3IDQzLjczMThDNDcwLjE2NCA0Ni4yOTExIDQ3My42OTkgNDkuOTQ3MiA0NzYuMjU4IDU0LjcwMDJDNDc4LjY5NSA1OS41NzUgNDgwLjAzNiA2NS4xODExIDQ4MC4wMzYgNzEuNzYyMUM0ODAuMDM2IDc4LjA5OTQgNDc4LjY5NSA4My41ODM2IDQ3Ni4yNTggODguNDU4NUM0NzMuNjk5IDkzLjMzMzMgNDcwLjE2NCA5Ni45ODk0IDQ2NS43NzcgOTkuNjcwNkM0NjEuMjY4IDEwMi4zNTIgNDU2LjE0OSAxMDMuNjkyIDQ1MC41NDMgMTAzLjY5MkM0NDUuOTEyIDEwMy42OTIgNDQxLjg5IDEwMi44MzkgNDM4LjQ3OCAxMDEuMTMzQzQzNS4wNjYgOTkuNDI2OCA0MzIuMjYzIDk2Ljk4OTQgNDMwLjE5MSA5My45NDI2TDQyOC42MDYgMTAyLjk2MUg0MTcuMTUxVjE3LjY1MTRINDMwLjMxM1Y0OS44MjUzQzQzNS4xODcgNDMuMjQ0MyA0NDIuMDEyIDM5LjgzMTkgNDUwLjU0MyAzOS44MzE5QzQ1Ni4xNDkgMzkuODMxOSA0NjEuMjY4IDQxLjE3MjUgNDY1Ljc3NyA0My43MzE4Wk00NjEuNTEyIDg2Ljg3NDFDNDY0LjkyNCA4Mi45NzQzIDQ2Ni42MyA3Ny45Nzc1IDQ2Ni42MyA3MS43NjIxQzQ2Ni42MyA2NS42Njg2IDQ2NC45MjQgNjAuNzkzNyA0NjEuNTEyIDU2Ljg5MzhDNDU4LjA5OSA1Mi45OTQgNDUzLjcxMiA1MS4wNDQgNDQ4LjM1IDUxLjA0NEM0NDIuODY1IDUxLjA0NCA0MzguNDc4IDUyLjk5NCA0MzUuMTg3IDU2Ljc3MkM0MzEuNzc1IDYwLjY3MTkgNDMwLjE5MSA2NS41NDY3IDQzMC4xOTEgNzEuNjQwM0M0MzAuMTkxIDc3Ljg1NTcgNDMxLjc3NSA4Mi44NTI0IDQzNS4xODcgODYuNzUyM0M0MzguNDc4IDkwLjY1MjEgNDQyLjg2NSA5Mi42MDIxIDQ0OC4zNSA5Mi42MDIxQzQ1My43MTIgOTIuNjAyMSA0NTguMDk5IDkwLjc3NCA0NjEuNTEyIDg2Ljg3NDFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDA0LjAwOSA0MC41NjM1VjEwMi45NjFIMzkyLjQzMUwzOTAuOTY5IDk1LjAzOThDMzg2LjIxNiAxMDAuODkgMzc5Ljc1NyAxMDMuNjkzIDM3MS43MTMgMTAzLjY5M0MzNjQuNDAxIDEwMy42OTMgMzU4LjQyOSAxMDEuNDk5IDM1My45MiA5Ni44Njc5QzM0OS4yODkgOTIuMzU4NyAzNDcuMDk1IDg1LjA0NjQgMzQ3LjA5NSA3NC45MzExVjQwLjU2MzVIMzYwLjI1N1Y3My41OTA1QzM2MC4yNTcgNzkuNjg0MSAzNjEuNDc2IDg0LjMxNTIgMzYzLjkxNCA4Ny40ODM4QzM2Ni4zNTEgOTAuNjUyNSAzNjkuODg1IDkyLjIzNjggMzc0Ljc2IDkyLjIzNjhDMzc5Ljc1NyA5Mi4yMzY4IDM4My42NTcgOTAuNDA4NyAzODYuNTgyIDg2Ljc1MjZDMzg5LjM4NSA4My4wOTY1IDM5MC44NDcgNzcuOTc3OSAzOTAuODQ3IDcxLjUxODdWNDAuNTYzNUg0MDQuMDA5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQwNC4wMDkgNDAuNTYzNVYxMDIuOTYxSDM5Mi40MzFMMzkwLjk2OSA5NS4wMzk4QzM4Ni4yMTYgMTAwLjg5IDM3OS43NTcgMTAzLjY5MyAzNzEuNzEzIDEwMy42OTNDMzY0LjQwMSAxMDMuNjkzIDM1OC40MjkgMTAxLjQ5OSAzNTMuOTIgOTYuODY3OUMzNDkuMjg5IDkyLjM1ODcgMzQ3LjA5NSA4NS4wNDY0IDM0Ny4wOTUgNzQuOTMxMVY0MC41NjM1SDM2MC4yNTdWNzMuNTkwNUMzNjAuMjU3IDc5LjY4NDEgMzYxLjQ3NiA4NC4zMTUyIDM2My45MTQgODcuNDgzOEMzNjYuMzUxIDkwLjY1MjUgMzY5Ljg4NSA5Mi4yMzY4IDM3NC43NiA5Mi4yMzY4QzM3OS43NTcgOTIuMjM2OCAzODMuNjU3IDkwLjQwODcgMzg2LjU4MiA4Ni43NTI2QzM4OS4zODUgODMuMDk2NSAzOTAuODQ3IDc3Ljk3NzkgMzkwLjg0NyA3MS41MTg3VjQwLjU2MzVINDA0LjAwOVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0zMjkuMTUzIDk3LjU5ODlDMzI0LjAzNCAxMDEuNzQzIDMxNy41NzUgMTAzLjY5MiAzMDkuNzc1IDEwMy42OTJDMzAzLjU2IDEwMy42OTIgMjk4LjA3NiAxMDIuNDc0IDI5My40NDUgOTkuNzkyNkMyODguNjkyIDk3LjExMTQgMjg1LjAzNiA5My4zMzM0IDI4Mi40NzYgODguNDU4NkMyNzkuOTE3IDgzLjU4MzcgMjc4LjY5OCA3Ny45Nzc3IDI3OC42OTggNzEuNjQwNEMyNzguNjk4IDY1LjMwMzEgMjc5LjkxNyA1OS44MTg5IDI4Mi41OTggNTQuOTQ0QzI4NS4xNTggNTAuMTkxMSAyODguODE0IDQ2LjUzNDkgMjkzLjU2NyA0My44NTM4QzI5OC4zMiA0MS4xNzI2IDMwMy44MDQgMzkuODMyIDMxMC4xNDEgMzkuODMyQzMxNy45NDEgMzkuODMyIDMyNC4yNzggNDEuOTAzOCAzMjkuMjc1IDQ2LjA0NzVDMzM0LjE1IDUwLjE5MTEgMzM3LjMxOCA1NS42NzUzIDMzOC41MzcgNjIuNzQzOEgzMjUuMDA5QzMyNC4wMzQgNTkuMjA5NSAzMjIuMzI4IDU2LjQwNjUgMzE5LjY0NyA1NC4yMTI4QzMxNi45NjYgNTIuMTQxIDMxMy42NzUgNTEuMDQ0MiAzMDkuNzc1IDUxLjA0NDJDMzA0LjQxMyA1MS4wNDQyIDMwMC4xNDggNTIuOTk0MSAyOTYuOTc5IDU2Ljc3MjFDMjkzLjgxIDYwLjY3MiAyOTIuMjI2IDY1LjU0NjggMjkyLjIyNiA3MS42NDA0QzI5Mi4yMjYgNzcuODU1OCAyOTMuODEgODIuODUyNSAyOTYuOTc5IDg2Ljc1MjRDMzAwLjE0OCA5MC42NTIzIDMwNC40MTMgOTIuNDgwMyAzMDkuNzc1IDkyLjQ4MDNDMzEzLjc5NyA5Mi40ODAzIDMxNy4yMSA5MS41MDU0IDMxOS44OTEgODkuMzExN0MzMjIuNTcyIDg3LjExOCAzMjQuMjc4IDg0LjE5MzEgMzI1LjEzMSA4MC41MzdIMzM4LjUzN0MzMzcuMzE4IDg3Ljg0OTIgMzM0LjE1IDkzLjQ1NTMgMzI5LjE1MyA5Ny41OTg5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE0NC4zOTIgMTcuNjUxNEgyMDAuMDg3VjMwLjA4MjJIMTU4LjQwN1Y1My43MjUySDE5Mi43NzRWNjUuNzkwNEgxNTguNDA3VjkwLjUzMDNIMjAxLjU0OVYxMDIuOTYxSDE0NC4zOTJWMTcuNjUxNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNjIuOTAyIDQ2LjY1NjhDMjY3LjUzMyA1MS4yODc5IDI2OS45NyA1OC42MDAyIDI2OS45NyA2OC41OTM2VjEwMi45NjFIMjU2LjY4NlY2OS4zMjQ4QzI1Ni42ODYgNjMuNDc1IDI1NS4zNDYgNTguOTY1OCAyNTIuOTA4IDU1Ljc5NzFDMjUwLjM0OSA1Mi43NTA0IDI0Ni42OTMgNTEuMTY2IDI0MS44MTggNTEuMTY2QzIzNi41NzcgNTEuMTY2IDIzMi40MzQgNTIuOTk0MSAyMjkuNTA5IDU2LjY1MDJDMjI2LjU4NCA2MC4zMDY0IDIyNS4xMjIgNjUuMTgxMiAyMjUuMTIyIDcxLjUxODVWMTAyLjk2MUgyMTEuOTU5VjQwLjU2MzNIMjIzLjQxNUwyMjQuODc4IDQ4LjcyODZDMjI5LjUwOSA0Mi44Nzg4IDIzNi4yMTIgMzkuODMyIDI0NC44NjUgMzkuODMyQzI1Mi4xNzcgMzkuODMyIDI1OC4yNyA0Mi4xNDc2IDI2Mi45MDIgNDYuNjU2OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04NC4wMDQ1IDYwLjAwMTJMOTYuMDA0OCA0OC4wMDFIODQuMDA0NUg0OC4wMDM4SDM2LjAwMzZIMjQuMDAzM0gxNi4yMzJDMTQuODk5OSA0OC4wMDEgMTMuNDA5NSA0OC4zNzc4IDEyLjAwMzEgNDkuMDExNEMxMC42NjYyIDQ5LjYxMzggOS40MDYyMiA1MC40NDkgOC40Mjk0IDUxLjQxMTVDOC4zODg2IDUxLjQ0OTkgOC4zNDc4IDUxLjQ4ODIgOC4zMDk0IDUxLjUyNjZMMy40NTQwNyA1Ni40ODA0QzMuNDM0ODcgNTYuNDk5NiAzLjQyMDQ4IDU2LjUxODcgMy40MDEyOCA1Ni41MzU1QzIuNDE0ODYgNTcuNTUzMiAxLjYyNzY0IDU4LjcyOTIgMS4wNTg4MyA1OS45OTg4QzAuMzcwMDE4IDYxLjUzNDkgMC4wMDI4MzM2OCA2My4yMTI1IDAuMDAyODMzNjggNjQuOTI4NVY3MS45OTkxVjk1Ljk5OTVWMTAzLjA3QzAuMDAyODMzNjggMTA0Ljc4NiAwLjM3MDAxOCAxMDYuNDYxIDEuMDU4ODMgMTA4QzEuNTEyNDQgMTA5LjAxMyAyLjEwNTI1IDEwOS45NjMgMi44MjUyNiAxMTAuODIyQzMuMDI0NDcgMTExLjA2IDMuMjMzMyAxMTEuMjk1IDMuNDUxNyAxMTEuNTE4TDguMzA2OTkgMTE2LjQ3MkM4LjY4MzggMTE2Ljg1NiA5LjEwNjIgMTE3LjIyMSA5LjU2MjIxIDExNy41NjJDMTAuMzA2MiAxMTguMTE2IDExLjEzNjcgMTE4LjYwMSAxMi4wMDA3IDExOC45OUMxMy40MDcxIDExOS42MjMgMTQuODk3NSAxMjAgMTYuMjI3MiAxMjBIOTUuOTk5OVYxMDhWOTUuOTk5NUgzNS45OTg3SDIzLjk5ODVWNzEuOTk5MUgzNS45OTg3SDQ3Ljk5OUg1OS45OTkySDY3LjI0OThDNjkuNDA1IDcxLjk5OTEgNzEuNDk3OCA3MS4zODk0IDczLjMwMDMgNzAuMjY4NkM3My4zMzE1IDcwLjI0OTQgNzMuMzYyNyA3MC4yMjc4IDczLjM5NjMgNzAuMjA4NkM3My40Nzc5IDcwLjE1NTggNzMuNTYxOSA3MC4xMDU0IDczLjY0MzUgNzAuMDUwMkM3NC42MjAzIDY5LjQxMTggNzUuNDk4NyA2OC42MzY2IDc2LjI0OTkgNjcuNzQ4Nkw4My45OTk3IDU5Ljk5ODhMODQuMDA0NSA2MC4wMDEyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTg0LjAwNDEgMEgxNi4yMzE1QzEzLjU4MTkgMCAxMC4zMDM0IDEuNDkyODMgOC4zMDY1NiAzLjUyODA3TDMuNDUxMjcgOC40ODE3N0MxLjI0MDgzIDEwLjczNzggMCAxMy43NzE1IDAgMTYuOTI5OVYyNC4wMDA1SDk2LjAwMTlWMEg4NC4wMDE3SDg0LjAwNDFaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzY2XzkwIj4KPHJlY3Qgd2lkdGg9IjU0OCIgaGVpZ2h0PSIxMjAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" alt="Encube" style="height:20px;display:block;opacity:0.45;" /></div>
+  <div class="footer-copy">© 2026 Encube. See you in Palma. 🌊</div>
+</footer>
+
+<script>
+function toggleFaq(el) { el.closest('.faq-item').classList.toggle('open'); }
+</script>
+</body>
+</html>
