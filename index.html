@@ -149,20 +149,21 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
 
   /* Guide section: swap canvas for a scrollable list on mobile */
   .guide-section { padding: 64px 0; }
-  .guide-canvas { display: none; }
+  .guide-canvas { display: none !important; }
+  .guide-grid { min-height: unset; }
   .guide-mobile-list {
-    display: flex !important;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 24px;
   }
   .guide-mobile-card {
     border-radius: 10px;
-    padding: 16px;
+    padding: 16px 16px 14px;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
   }
 
   /* Footer CTA */
@@ -179,7 +180,15 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
   .facts-grid { grid-template-columns: 1fr; }
   .fact-card:nth-child(3n) { border-right: none; }
   .fact-card { border-right: none !important; }
+  .guide-mobile-list { grid-template-columns: 1fr; }
 }
+
+/* Hide mobile list on desktop */
+.guide-mobile-list { display: none; }
+.guide-mobile-card .guide-card-tag { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(0,0,0,0.5); margin-bottom: 4px; }
+.guide-mobile-card .guide-card-title { font-size: 13px; font-weight: 700; color: #17181D; line-height: 1.25; margin-bottom: 4px; }
+.guide-mobile-card .guide-card-desc { font-size: 11px; color: rgba(0,0,0,0.65); line-height: 1.5; flex: 1; }
+.guide-mobile-card .guide-card-dist { font-size: 10px; font-weight: 500; color: rgba(0,0,0,0.45); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }
 
 .guide-canvas {
   position: relative;
@@ -381,7 +390,7 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
     </div></div></div>
 
     <!-- Mobile guide list (hidden on desktop, shown on mobile) -->
-    <div class="guide-mobile-list" style="display:none;padding:0 20px;">
+    <div class="guide-mobile-list" style="padding:0 20px;">
       <div class="guide-mobile-card" style="background:#DA9CF1;"><div class="guide-card-tag">🏰 Hike</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Castillo+de+Bellver" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Castell de Bellver</a></div><div class="guide-card-desc">Ancient castle surrounded by walls and trees. 4€ entrance.</div><div class="guide-card-dist">0.6 km away</div></div>
       <div class="guide-mobile-card" style="background:#65F1AD;"><div class="guide-card-tag">🥾 Viewpoint</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Mirador+del+Castillo+de+Bellver" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Viewpoint & Hike</a></div><div class="guide-card-desc">Forest walk with views from the viewpoint. Free.</div><div class="guide-card-dist">0.6 km away</div></div>
       <div class="guide-mobile-card" style="background:#65A9F1;"><div class="guide-card-tag">🌅 Morning walk</div><div class="guide-card-title"><a href="https://www.google.com/maps/search/39.560097,+2.627013" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Seafront Promenade</a></div><div class="guide-card-desc">Relaxed stroll along the waterfront. Free.</div><div class="guide-card-dist">2.3 km away</div></div>
