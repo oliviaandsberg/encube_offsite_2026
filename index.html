@@ -17,8 +17,6 @@ body { font-family: 'Inter', Arial, sans-serif; background: #FDFCFF; color: #171
 
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,252,255,0.88); backdrop-filter: blur(16px); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(125,57,237,0.1); }
 .nav-logo { display:flex; align-items:center; }
-.nav-cta { background: #7D39ED; color: #fff; padding: 9px 22px; border-radius: 10px 3px 3px 3px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; transition: background 0.2s; }
-.nav-cta:hover { background: #6B2ED6; }
 
 .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(125,57,237,0.08) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(130,107,246,0.06) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 80% 10%, rgba(219,0,255,0.04) 0%, transparent 60%); pointer-events: none; }
@@ -72,6 +70,37 @@ section { padding: 88px 24px; }
 .fact-value { font-size: 19px; color: #17181D; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 4px; font-weight: 500; }
 .fact-sub { font-size: 12px; color: #9299A7; line-height: 1.45; }
 
+/* ── SCHEDULE ── */
+.schedule-section { background: #FFFFFF; padding: 88px 24px; }
+.schedule-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 52px; border: 1px solid rgba(125,57,237,0.12); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 20px rgba(125,57,237,0.06); }
+
+.schedule-day { border-right: 1px solid rgba(125,57,237,0.08); display: flex; flex-direction: column; }
+.schedule-day:last-child { border-right: none; }
+
+.schedule-day-header { background: #F9F7FF; padding: 16px 14px 14px; border-bottom: 1px solid rgba(125,57,237,0.1); }
+.schedule-day-name { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #7D39ED; margin-bottom: 2px; }
+.schedule-day-date { font-size: 13px; color: #51566D; letter-spacing: -0.01em; }
+
+.schedule-events { display: flex; flex-direction: column; gap: 0; padding: 10px 10px; flex: 1; gap: 6px; }
+
+.sched-event { border-radius: 6px; padding: 8px 10px; }
+.sched-event-time { font-size: 10px; color: rgba(0,0,0,0.45); letter-spacing: -0.01em; margin-bottom: 2px; }
+.sched-event-title { font-size: 12px; font-weight: 600; color: #17181D; letter-spacing: -0.01em; line-height: 1.3; }
+.sched-event-sub { font-size: 10px; color: rgba(0,0,0,0.5); margin-top: 3px; line-height: 1.35; }
+
+/* event color types */
+.ev-joint { background: rgba(255, 213, 170, 0.5); }
+.ev-work { background: rgba(187, 229, 255, 0.5); }
+.ev-activity { background: rgba(187, 229, 196, 0.5); }
+.ev-lunch { background: rgba(255, 241, 180, 0.5); }
+.ev-free { background: rgba(220, 220, 230, 0.35); }
+.ev-transfer { background: rgba(200, 200, 240, 0.35); }
+.ev-dinner { background: rgba(255, 190, 190, 0.45); }
+.ev-optional { border: 1px dashed rgba(239,141,138,0.5); background: rgba(239,141,138,0.12); }
+
+.sched-badge { display: inline-block; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; padding: 1px 5px; border-radius: 3px; margin-top: 3px; color: rgba(0,0,0,0.5); background: rgba(0,0,0,0.06); }
+
+/* ── FAQ ── */
 .faq-section { background: #F9F7FF; background-image: radial-gradient(circle, rgba(125,57,237,0.1) 1.5px, transparent 1.5px); background-size: 32px 32px; }
 .faq-list { margin-top: 52px; border: 1px solid rgba(125,57,237,0.12); border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 2px 20px rgba(125,57,237,0.06); }
 .faq-item { border-bottom: 1px solid rgba(125,57,237,0.08); }
@@ -86,8 +115,6 @@ section { padding: 88px 24px; }
 .faq-answer strong { color: #17181D; font-weight: 500; }
 
 .guide-section { padding: 96px 0; background-color: #FDFCFF; background-image: radial-gradient(circle, rgba(23,24,29,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; }
-.tbd-notice { display: flex; align-items: center; gap: 10px; background: #FFFAC3; border: 1px solid #FEED3F; border-radius: 10px; padding: 12px 18px; margin-bottom: 36px; font-size: 13px; color: #5A4203; }
-.tbd-badge { background: #FFC700; color: #17181D; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; flex-shrink: 0; }
 .guide-grid {
   position: relative;
   width: 100%;
@@ -100,20 +127,14 @@ section { padding: 88px 24px; }
 .guide-card-img { height: 130px; background-color: #F5F2FF; background-image: radial-gradient(circle, rgba(125,57,237,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; display: flex; align-items: center; justify-content: center; }
 .guide-card-img-text { font-size: 11px; color: #9299A7; letter-spacing: 0.06em; text-transform: uppercase; background: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 4px; }
 
-
-
-
-
 .map-placeholder { height: 340px; background-color: #F5F2FF; background-image: radial-gradient(circle, rgba(125,57,237,0.12) 1.5px, transparent 1.5px); background-size: 32px 32px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(125,57,237,0.1); }
 .map-placeholder-icon { font-size: 28px; opacity: 0.4; }
 .map-placeholder-text { font-size: 13px; color: #9299A7; }
 
 .footer-cta { text-align: center; padding: 96px 24px; position: relative; overflow: hidden; }
-.footer-cta::before { display: none; }
 .footer-cta > * { position: relative; z-index: 1; }
 .footer-cta h2 { font-size: clamp(44px, 6vw, 72px); font-weight: 700; color: #FFFFFF; letter-spacing: -0.02em; line-height: 0.9; margin-bottom: 18px; }
 .footer-cta p { font-size: 16px; color: #9299A7; margin-bottom: 40px; letter-spacing: -0.01em; }
-.footer-cta .btn-primary { font-size: 16px; padding: 18px 48px; box-shadow: 0 4px 24px rgba(125,57,237,0.4); }
 
 footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .footer-logo { display:flex; align-items:center; }
@@ -121,7 +142,6 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
 
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
-  .nav-cta { padding: 8px 16px; font-size: 12px; }
   .hero { padding: 100px 20px 60px; }
   .hero-meta { flex-direction: column; }
   .hero-meta-item { border-right: none !important; border-bottom: 1px solid rgba(125,57,237,0.1); }
@@ -134,10 +154,10 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
   .cursor-team { display: none; }
   section { padding: 64px 20px; }
   .section-title { font-size: clamp(28px, 8vw, 42px); }
-  /* Guide: hide entirely on mobile */
   .guide-section { display: none !important; }
+  .schedule-grid { grid-template-columns: 1fr; }
+  .schedule-day { border-right: none; border-bottom: 1px solid rgba(125,57,237,0.08); }
   footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
-  /* Footer CTA: fewer emojis shown via opacity */
   .fe-8, .fe-9, .fe-10, .fe-11, .fe-12, .fe-13, .fe-14, .fe-15, .fe-16 { display: none; }
 }
 
@@ -163,36 +183,15 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
   z-index: 2;
   position: relative;
 }
-.guide-hotel-emoji {
-  font-size: 100px;
-  line-height: 1;
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
-}
-.guide-hotel-name {
-  font-size: 22px;
-  font-weight: 700;
-  color: #17181D;
-  letter-spacing: -0.02em;
-  background: white;
-  padding: 6px 16px;
-  border-radius: 100px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-}
-.guide-card {
-  border-radius: 4px;
-  box-shadow: 4px 6px 16px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.10);
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: absolute;
-  width: 160px;
-}
-
+.guide-hotel-emoji { font-size: 100px; line-height: 1; filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18)); }
+.guide-hotel-name { font-size: 22px; font-weight: 700; color: #17181D; letter-spacing: -0.02em; background: white; padding: 6px 16px; border-radius: 100px; box-shadow: 0 2px 12px rgba(0,0,0,0.12); }
+.guide-card { border-radius: 4px; box-shadow: 4px 6px 16px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.10); transition: transform 0.2s, box-shadow 0.2s; position: absolute; width: 160px; }
 .guide-card-body { padding: 14px 14px 12px; display: flex; flex-direction: column; }
 .guide-card-tag { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; display: inline-block; color: rgba(0,0,0,0.5); }
 .guide-card-title { font-size: 13px; font-weight: 700; color: #17181D; margin-bottom: 5px; letter-spacing: -0.01em; line-height: 1.2; }
 .guide-card-desc { font-size: 11px; color: rgba(0,0,0,0.65); line-height: 1.45; flex: 1; }
 .guide-card-dist { font-size: 10px; font-weight: 500; margin-top: 10px; padding-top: 8px; letter-spacing: -0.01em; color: rgba(0,0,0,0.5); }
 
-/* Mobile guide list */
 .guide-mobile-list { display: none; flex-direction: column; gap: 10px; padding: 0 20px; margin-top: 24px; }
 .guide-mobile-card { border-radius: 8px; padding: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.12); }
 
@@ -204,12 +203,10 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
 .fe-5 { bottom: 18%; left: 8%; animation: floatB 7.5s ease-in-out infinite 0.5s; }
 .fe-6 { bottom: 12%; left: 34%; animation: floatC 8.5s ease-in-out infinite 1.5s; }
 .fe-7 { bottom: 18%; right: 8%; animation: floatA 6.5s ease-in-out infinite 2s; }
-
 .fe-8 { top: 45%; left: 14%; animation: floatB 9s ease-in-out infinite 0.8s; }
 .fe-9 { top: 8%; left: 44%; animation: floatC 7s ease-in-out infinite 1.2s; }
 .fe-10 { bottom: 40%; right: 14%; animation: floatA 8s ease-in-out infinite 0.3s; }
 .fe-11 { bottom: 10%; right: 28%; animation: floatB 6.5s ease-in-out infinite 1.8s; }
-
 .fe-12 { top: 20%; left: 18%; animation: floatC 7.5s ease-in-out infinite 0.6s; }
 .fe-13 { top: 12%; right: 20%; animation: floatA 8s ease-in-out infinite 1.4s; }
 .fe-14 { bottom: 22%; left: 20%; animation: floatB 7s ease-in-out infinite 0.9s; }
@@ -220,8 +217,7 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
 <body>
 
 <nav>
-  <div class="nav-logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQ4IiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU0OCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82Nl8xMTUpIj4KPHBhdGggZD0iTTQ5MC41NjkgNTUuMDY1OUM0OTMuMTI5IDUwLjE5MTEgNDk2LjY2MyA0Ni41MzQ5IDUwMS4yOTQgNDMuODUzOEM1MDUuOTI1IDQxLjE3MjYgNTExLjE2NSAzOS44MzIgNTE3LjEzNyAzOS44MzJDNTIzLjEwOSAzOS44MzIgNTI4LjM0OSA0MS4wNTA3IDUzMi45OCA0My40ODgyQzUzNy42MTIgNDUuOTI1NiA1NDEuMTQ2IDQ5LjQ1OTggNTQzLjgyNyA1My44NDcyQzU0Ni41MDggNTguMzU2NCA1NDcuODQ5IDYzLjU5NjkgNTQ3Ljk3MSA2OS41Njg2QzU0Ny45NzEgNzEuMjc0OCA1NDcuODQ5IDcyLjg1OTEgNTQ3LjYwNSA3NC41NjUzSDUwMC41NjNWNzUuMjk2NUM1MDAuODA2IDgwLjc4MDcgNTAyLjUxMyA4NS4wNDYyIDUwNS42ODEgODguMjE0OEM1MDguNzI4IDkxLjM4MzUgNTEyLjg3MiA5Mi45Njc4IDUxNy45OSA5Mi45Njc4QzUyMi4wMTIgOTIuOTY3OCA1MjUuNDI0IDkyLjExNDcgNTI4LjIyNyA5MC4xNjQ4QzUzMC45MDkgODguMjE0OCA1MzIuNzM3IDg1LjUzMzcgNTMzLjcxMiA4MS45OTk0SDU0Ni44NzRDNTQ1LjY1NSA4OC4zMzY3IDU0Mi42MDggOTMuNTc3MiA1MzcuNjEyIDk3LjU5ODlDNTMyLjYxNSAxMDEuNzQzIDUyNi4zOTkgMTAzLjY5MiA1MTguOTY1IDEwMy42OTJDNTEyLjM4NCAxMDMuNjkyIDUwNi43NzggMTAyLjQ3NCA1MDEuOTAzIDk5Ljc5MjZDNDk3LjAyOCA5Ny4xMTE0IDQ5My4zNzIgOTMuNDU1MyA0OTAuNjkxIDg4LjU4MDVDNDg4LjAxIDgzLjgyNzUgNDg2Ljc5MSA3OC4yMjE0IDQ4Ni43OTEgNzEuODg0MUM0ODYuNzkxIDY1LjU0NjggNDg4LjAxIDU5Ljk0MDggNDkwLjU2OSA1NS4wNjU5Wk01MzQuNTY1IDY0LjkzNzVDNTMzLjk1NSA2MC40MjgyIDUzMi4xMjcgNTYuODk0IDUyOS4wODEgNTQuMzM0N0M1MjYuMDM0IDUxLjc3NTQgNTIyLjI1NiA1MC40MzQ4IDUxNy42MjUgNTAuNDM0OEM1MTMuMjM3IDUwLjQzNDggNTA5LjU4MSA1MS43NzU0IDUwNi40MTIgNTQuNDU2NkM1MDMuMjQ0IDU3LjEzNzcgNTAxLjUzOCA2MC41NTAxIDUwMS4wNSA2NC45Mzc1SDUzNC41NjVaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00NjUuNzc3IDQzLjczMThDNDcwLjE2NSA0Ni4yOTExIDQ3My42OTkgNDkuOTQ3MiA0NzYuMjU4IDU0LjcwMDJDNDc4LjY5NiA1OS41NzUgNDgwLjAzNiA2NS4xODExIDQ4MC4wMzYgNzEuNzYyMUM0ODAuMDM2IDc4LjA5OTQgNDc4LjY5NiA4My41ODM2IDQ3Ni4yNTggODguNDU4NUM0NzMuNjk5IDkzLjMzMzMgNDcwLjE2NSA5Ni45ODk0IDQ2NS43NzcgOTkuNjcwNkM0NjEuMjY4IDEwMi4zNTIgNDU2LjE0OSAxMDMuNjkyIDQ1MC41NDMgMTAzLjY5MkM0NDUuOTEyIDEwMy42OTIgNDQxLjg5IDEwMi44MzkgNDM4LjQ3OCAxMDEuMTMzQzQzNS4wNjYgOTkuNDI2OCA0MzIuMjYzIDk2Ljk4OTQgNDMwLjE5MSA5My45NDI2TDQyOC42MDcgMTAyLjk2MUg0MTcuMTUxVjE3LjY1MTRINDMwLjMxM1Y0OS44MjUzQzQzNS4xODggNDMuMjQ0MyA0NDIuMDEyIDM5LjgzMTkgNDUwLjU0MyAzOS44MzE5QzQ1Ni4xNDkgMzkuODMxOSA0NjEuMjY4IDQxLjE3MjUgNDY1Ljc3NyA0My43MzE4Wk00NjEuNTEyIDg2Ljg3NDFDNDY0LjkyNCA4Mi45NzQzIDQ2Ni42MyA3Ny45Nzc1IDQ2Ni42MyA3MS43NjIxQzQ2Ni42MyA2NS42Njg2IDQ2NC45MjQgNjAuNzkzNyA0NjEuNTEyIDU2Ljg5MzhDNDU4LjA5OSA1Mi45OTQgNDUzLjcxMiA1MS4wNDQgNDQ4LjM1IDUxLjA0NEM0NDIuODY1IDUxLjA0NCA0MzguNDc4IDUyLjk5NCA0MzUuMTg4IDU2Ljc3MkM0MzEuNzc1IDYwLjY3MTkgNDMwLjE5MSA2NS41NDY3IDQzMC4xOTEgNzEuNjQwM0M0MzAuMTkxIDc3Ljg1NTcgNDMxLjc3NSA4Mi44NTI0IDQzNS4xODggODYuNzUyM0M0MzguNDc4IDkwLjY1MjEgNDQyLjg2NSA5Mi42MDIxIDQ0OC4zNSA5Mi42MDIxQzQ1My43MTIgOTIuNjAyMSA0NTguMDk5IDkwLjc3NCA0NjEuNTEyIDg2Ljg3NDFaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00MDQuMDA5IDQwLjU2MzVWMTAyLjk2MUgzOTIuNDMxTDM5MC45NjkgOTUuMDM5OEMzODYuMjE2IDEwMC44OSAzNzkuNzU3IDEwMy42OTMgMzcxLjcxMyAxMDMuNjkzQzM2NC40MDEgMTAzLjY5MyAzNTguNDI5IDEwMS40OTkgMzUzLjkyIDk2Ljg2NzlDMzQ5LjI4OSA5Mi4zNTg3IDM0Ny4wOTUgODUuMDQ2NCAzNDcuMDk1IDc0LjkzMTFWNDAuNTYzNUgzNjAuMjU4VjczLjU5MDVDMzYwLjI1OCA3OS42ODQxIDM2MS40NzYgODQuMzE1MiAzNjMuOTE0IDg3LjQ4MzhDMzY2LjM1MSA5MC42NTI1IDM2OS44ODUgOTIuMjM2OCAzNzQuNzYgOTIuMjM2OEMzNzkuNzU3IDkyLjIzNjggMzgzLjY1NyA5MC40MDg3IDM4Ni41ODIgODYuNzUyNkMzODkuMzg1IDgzLjA5NjUgMzkwLjg0NyA3Ny45Nzc5IDM5MC44NDcgNzEuNTE4N1Y0MC41NjM1SDQwNC4wMDlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00MDQuMDA5IDQwLjU2MzVWMTAyLjk2MUgzOTIuNDMxTDM5MC45NjkgOTUuMDM5OEMzODYuMjE2IDEwMC44OSAzNzkuNzU3IDEwMy42OTMgMzcxLjcxMyAxMDMuNjkzQzM2NC40MDEgMTAzLjY5MyAzNTguNDI5IDEwMS40OTkgMzUzLjkyIDk2Ljg2NzlDMzQ5LjI4OSA5Mi4zNTg3IDM0Ny4wOTUgODUuMDQ2NCAzNDcuMDk1IDc0LjkzMTFWNDAuNTYzNUgzNjAuMjU4VjczLjU5MDVDMzYwLjI1OCA3OS42ODQxIDM2MS40NzYgODQuMzE1MiAzNjMuOTE0IDg3LjQ4MzhDMzY2LjM1MSA5MC42NTI1IDM2OS44ODUgOTIuMjM2OCAzNzQuNzYgOTIuMjM2OEMzNzkuNzU3IDkyLjIzNjggMzgzLjY1NyA5MC40MDg3IDM4Ni41ODIgODYuNzUyNkMzODkuMzg1IDgzLjA5NjUgMzkwLjg0NyA3Ny45Nzc5IDM5MC44NDcgNzEuNTE4N1Y0MC41NjM1SDQwNC4wMDlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0zMjkuMTUzIDk3LjU5ODlDMzI0LjAzNSAxMDEuNzQzIDMxNy41NzUgMTAzLjY5MiAzMDkuNzc2IDEwMy42OTJDMzAzLjU2IDEwMy42OTIgMjk4LjA3NiAxMDIuNDc0IDI5My40NDUgOTkuNzkyNkMyODguNjkyIDk3LjExMTQgMjg1LjAzNiA5My4zMzM0IDI4Mi40NzYgODguNDU4NkMyNzkuOTE3IDgzLjU4MzcgMjc4LjY5OCA3Ny45Nzc3IDI3OC42OTggNzEuNjQwNEMyNzguNjk4IDY1LjMwMzEgMjc5LjkxNyA1OS44MTg5IDI4Mi41OTggNTQuOTQ0QzI4NS4xNTggNTAuMTkxMSAyODguODE0IDQ2LjUzNDkgMjkzLjU2NyA0My44NTM4QzI5OC4zMiA0MS4xNzI2IDMwMy44MDQgMzkuODMyIDMxMC4xNDEgMzkuODMyQzMxNy45NDEgMzkuODMyIDMyNC4yNzggNDEuOTAzOCAzMjkuMjc1IDQ2LjA0NzVDMzM0LjE1IDUwLjE5MTEgMzM3LjMxOCA1NS42NzUzIDMzOC41MzcgNjIuNzQzOEgzMjUuMDFDMzI0LjAzNSA1OS4yMDk1IDMyMi4zMjggNTYuNDA2NSAzMTkuNjQ3IDU0LjIxMjhDMzE2Ljk2NiA1Mi4xNDEgMzEzLjY3NSA1MS4wNDQyIDMwOS43NzYgNTEuMDQ0MkMzMDQuNDEzIDUxLjA0NDIgMzAwLjE0OCA1Mi45OTQxIDI5Ni45NzkgNTYuNzcyMUMyOTMuODEgNjAuNjcyIDI5Mi4yMjYgNjUuNTQ2OCAyOTIuMjI2IDcxLjY0MDRDMjkyLjIyNiA3Ny44NTU4IDI5My44MSA4Mi44NTI1IDI5Ni45NzkgODYuNzUyNEMzMDAuMTQ4IDkwLjY1MjMgMzA0LjQxMyA5Mi40ODAzIDMwOS43NzYgOTIuNDgwM0MzMTMuNzk3IDkyLjQ4MDMgMzE3LjIxIDkxLjUwNTQgMzE5Ljg5MSA4OS4zMTE3QzMyMi41NzIgODcuMTE4IDMyNC4yNzggODQuMTkzMSAzMjUuMTMxIDgwLjUzN0gzMzguNTM3QzMzNy4zMTggODcuODQ5MiAzMzQuMTUgOTMuNDU1MyAzMjkuMTUzIDk3LjU5ODlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0xNDQuMzkyIDE3LjY1MTRIMjAwLjA4N1YzMC4wODIySDE1OC40MDdWNTMuNzI1MkgxOTIuNzc0VjY1Ljc5MDRIMTU4LjQwN1Y5MC41MzAzSDIwMS41NDlWMTAyLjk2MUgxNDQuMzkyVjE3LjY1MTRaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0yNjIuOTAyIDQ2LjY1NjhDMjY3LjUzMyA1MS4yODc5IDI2OS45NyA1OC42MDAyIDI2OS45NyA2OC41OTM2VjEwMi45NjFIMjU2LjY4NlY2OS4zMjQ4QzI1Ni42ODYgNjMuNDc1IDI1NS4zNDYgNTguOTY1OCAyNTIuOTA4IDU1Ljc5NzFDMjUwLjM0OSA1Mi43NTA0IDI0Ni42OTMgNTEuMTY2IDI0MS44MTggNTEuMTY2QzIzNi41NzcgNTEuMTY2IDIzMi40MzQgNTIuOTk0MSAyMjkuNTA5IDU2LjY1MDJDMjI2LjU4NCA2MC4zMDY0IDIyNS4xMjIgNjUuMTgxMiAyMjUuMTIyIDcxLjUxODVWMTAyLjk2MUgyMTEuOTU5VjQwLjU2MzNIMjIzLjQxNUwyMjQuODc4IDQ4LjcyODZDMjI5LjUwOSA0Mi44Nzg4IDIzNi4yMTIgMzkuODMyIDI0NC44NjUgMzkuODMyQzI1Mi4xNzcgMzkuODMyIDI1OC4yNyA0Mi4xNDc2IDI2Mi45MDIgNDYuNjU2OFoiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDUgNjAuMDAxMkw5Ni4wMDQ3IDQ4LjAwMUg4NC4wMDQ1SDQ4LjAwMzhIMzYuMDAzNUgyNC4wMDMzSDE2LjIzMTlDMTQuODk5OSA0OC4wMDEgMTMuNDA5NSA0OC4zNzc4IDEyLjAwMyA0OS4wMTE0QzEwLjY2NjIgNDkuNjEzOCA5LjQwNjE5IDUwLjQ0OSA4LjQyOTM3IDUxLjQxMTVDOC4zODg1NyA1MS40NDk5IDguMzQ3NzcgNTEuNDg4MiA4LjMwOTM3IDUxLjUyNjZMMy40NTQwNSA1Ni40ODA0QzMuNDM0ODUgNTYuNDk5NiAzLjQyMDQ1IDU2LjUxODcgMy40MDEyNSA1Ni41MzU1QzIuNDE0ODMgNTcuNTUzMiAxLjYyNzYyIDU4LjcyOTIgMS4wNTg4MSA1OS45OTg4QzAuMzY5OTkyIDYxLjUzNDkgMC4wMDI4MDc2MiA2My4yMTI1IDAuMDAyODA3NjIgNjQuOTI4NVY3MS45OTkxVjk1Ljk5OTVWMTAzLjA3QzAuMDAyODA3NjIgMTA0Ljc4NiAwLjM2OTk5MiAxMDYuNDYxIDEuMDU4ODEgMTA4QzEuNTEyNDEgMTA5LjAxMyAyLjEwNTIyIDEwOS45NjMgMi44MjUyNCAxMTAuODIyQzMuMDI0NDQgMTExLjA2IDMuMjMzMjcgMTExLjI5NSAzLjQ1MTY4IDExMS41MThMOC4zMDY5NyAxMTYuNDcyQzguNjgzNzggMTE2Ljg1NiA5LjEwNjE4IDExNy4yMjEgOS41NjIxOSAxMTcuNTYyQzEwLjMwNjIgMTE4LjExNiAxMS4xMzY2IDExOC42MDEgMTIuMDAwNiAxMTguOTlDMTMuNDA3MSAxMTkuNjIzIDE0Ljg5NzUgMTIwIDE2LjIyNzEgMTIwSDk1Ljk5OTlWMTA4Vjk1Ljk5OTVIMzUuOTk4N0gyMy45OTg1VjcxLjk5OTFIMzUuOTk4N0g0Ny45OTlINTkuOTk5Mkg2Ny4yNDk3QzY5LjQwNSA3MS45OTkxIDcxLjQ5NzggNzEuMzg5NCA3My4zMDAyIDcwLjI2ODZDNzMuMzMxNCA3MC4yNDk0IDczLjM2MjcgNzAuMjI3OCA3My4zOTYzIDcwLjIwODZDNzMuNDc3OSA3MC4xNTU4IDczLjU2MTkgNzAuMTA1NCA3My42NDM1IDcwLjA1MDJDNzQuNjIwMyA2OS40MTE4IDc1LjQ5ODcgNjguNjM2NiA3Ni4yNDk5IDY3Ljc0ODZMODMuOTk5NyA1OS45OTg4TDg0LjAwNDUgNjAuMDAxMloiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDEgMEgxNi4yMzE1QzEzLjU4MTkgMCAxMC4zMDM0IDEuNDkyODMgOC4zMDY1NiAzLjUyODA3TDMuNDUxMjcgOC40ODE3N0MxLjI0MDgzIDEwLjczNzggMCAxMy43NzE1IDAgMTYuOTI5OVYyNC4wMDA1SDk2LjAwMTlWMEg4NC4wMDE3SDg0LjAwNDFaIiBmaWxsPSIjMTcxODFEIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNjZfMTE1Ij4KPHJlY3Qgd2lkdGg9IjU0OCIgaGVpZ2h0PSIxMjAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" alt="Encube" style="height:24px;display:block;" /></div>
-  <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="nav-cta">Register now →</a>
+  <div class="nav-logo"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTQ4IiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDU0OCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF82Nl8xMTUpIj4KPHBhdGggZD0iTTQ5MC41NjkgNTUuMDY1OUM0OTMuMTI5IDUwLjE5MTEgNDk2LjY2MyA0Ni41MzQ5IDUwMS4yOTQgNDMuODUzOEM1MDUuOTI1IDQxLjE3MjYgNTExLjE2NSAzOS44MzIgNTE3LjEzNyAzOS44MzJDNTIzLjEwOSAzOS44MzIgNTI4LjM0OSA0MS4wNTA3IDUzMi45OCA0My40ODgyQzUzNy42MTIgNDUuOTI1NiA1NDEuMTQ2IDQ5LjQ1OTggNTQzLjgyNyA1My44NDcyQzU0Ni41MDggNTguMzU2NCA1NDcuODQ5IDYzLjU5NjkgNTQ3Ljk3MSA2OS41Njg2QzU0Ny45NzEgNzEuMjc0OCA1NDcuODQ5IDcyLjg1OTEgNTQ3LjYwNSA3NC41NjUzSDUwMC41NjNWNzUuMjk2NUM1MDAuODA2IDgwLjc4MDcgNTAyLjUxMyA4NS4wNDYyIDUwNS42ODEgODguMjE0OEM1MDguNzI4IDkxLjM4MzUgNTEyLjg3MiA5Mi45Njc4IDUxNy45OSA5Mi45Njc4QzUyMi4wMTIgOTIuOTY3OCA1MjUuNDI0IDkyLjExNDcgNTI4LjIyNyA5MC4xNjQ4QzUzMC45MDkgODguMjE0OCA1MzIuNzM3IDg1LjUzMzcgNTMzLjcxMiA4MS45OTk0SDU0Ni44NzRDNTQ1LjY1NSA4OC4zMzY3IDU0Mi42MDggOTMuNTc3MiA1MzcuNjEyIDk3LjU5ODlDNTMyLjYxNSAxMDEuNzQzIDUyNi4zOTkgMTAzLjY5MiA1MTguOTY1IDEwMy42OTJDNTEyLjM4NCAxMDMuNjkyIDUwNi43NzggMTAyLjQ3NCA1MDEuOTAzIDk5Ljc5MjZDNDk3LjAyOCA5Ny4xMTE0IDQ5My4zNzIgOTMuNDU1MyA0OTAuNjkxIDg4LjU4MDVDNDg4LjAxIDgzLjgyNzUgNDg2Ljc5MSA3OC4yMjE0IDQ4Ni43OTEgNzEuODg0MUM0ODYuNzkxIDY1LjU0NjggNDg4LjAxIDU5Ljk0MDggNDkwLjU2OSA1NS4wNjU5Wk01MzQuNTY1IDY0LjkzNzVDNTMzLjk1NSA2MC40MjgyIDUzMi4xMjcgNTYuODk0IDUyOS4wODEgNTQuMzM0N0M1MjYuMDM0IDUxLjc3NTQgNTIyLjI1NiA1MC40MzQ4IDUxNy42MjUgNTAuNDM0OEM1MTMuMjM3IDUwLjQzNDggNTA5LjU4MSA1MS43NzU0IDUwNi40MTIgNTQuNDU2NkM1MDMuMjQ0IDU3LjEzNzcgNTAxLjUzOCA2MC41NTAxIDUwMS4wNSA2NC45Mzc1SDUzNC41NjVaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00NjUuNzc3IDQzLjczMThDNDcwLjE2NSA0Ni4yOTExIDQ3My42OTkgNDkuOTQ3MiA0NzYuMjU4IDU0LjcwMDJDNDc4LjY5NiA1OS41NzUgNDgwLjAzNiA2NS4xODExIDQ4MC4wMzYgNzEuNzYyMUM0ODAuMDM2IDc4LjA5OTQgNDc4LjY5NiA4My41ODM2IDQ3Ni4yNTggODguNDU4NUM0NzMuNjk5IDkzLjMzMzMgNDcwLjE2NSA5Ni45ODk0IDQ2NS43NzcgOTkuNjcwNkM0NjEuMjY4IDEwMi4zNTIgNDU2LjE0OSAxMDMuNjkyIDQ1MC41NDMgMTAzLjY5MkM0NDUuOTEyIDEwMy42OTIgNDQxLjg5IDEwMi44MzkgNDM4LjQ3OCAxMDEuMTMzQzQzNS4wNjYgOTkuNDI2OCA0MzIuMjYzIDk2Ljk4OTQgNDMwLjE5MSA5My45NDI2TDQyOC42MDcgMTAyLjk2MUg0MTcuMTUxVjE3LjY1MTRINDMwLjMxM1Y0OS44MjUzQzQzNS4xODggNDMuMjQ0MyA0NDIuMDEyIDM5LjgzMTkgNDUwLjU0MyAzOS44MzE5QzQ1Ni4xNDkgMzkuODMxOSA0NjEuMjY4IDQxLjE3MjUgNDY1Ljc3NyA0My43MzE4Wk00NjEuNTEyIDg2Ljg3NDFDNDY0LjkyNCA4Mi45NzQzIDQ2Ni42MyA3Ny45Nzc1IDQ2Ni42MyA3MS43NjIxQzQ2Ni42MyA2NS42Njg2IDQ2NC45MjQgNjAuNzkzNyA0NjEuNTEyIDU2Ljg5MzhDNDU4LjA5OSA1Mi45OTQgNDUzLjcxMiA1MS4wNDQgNDQ4LjM1IDUxLjA0NEM0NDIuODY1IDUxLjA0NCA0MzguNDc4IDUyLjk5NCA0MzUuMTg4IDU2Ljc3MkM0MzEuNzc1IDYwLjY3MTkgNDMwLjE5MSA2NS41NDY3IDQzMC4xOTEgNzEuNjQwM0M0MzAuMTkxIDc3Ljg1NTcgNDMxLjc3NSA4Mi44NTI0IDQzNS4xODggODYuNzUyM0M0MzguNDc4IDkwLjY1MjEgNDQyLjg2NSA5Mi42MDIxIDQ0OC4zNSA5Mi42MDIxQzQ1My43MTIgOTIuNjAyMSA0NTguMDk5IDkwLjc3NCA0NjEuNTEyIDg2Ljg3NDFaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik00MDQuMDA5IDQwLjU2MzVWMTAyLjk2MUgzOTIuNDMxTDM5MC45NjkgOTUuMDM5OEMzODYuMjE2IDEwMC44OSAzNzkuNzU3IDEwMy42OTMgMzcxLjcxMyAxMDMuNjkzQzM2NC40MDEgMTAzLjY5MyAzNTguNDI5IDEwMS40OTkgMzUzLjkyIDk2Ljg2NzlDMzQ5LjI4OSA5Mi4zNTg3IDM0Ny4wOTUgODUuMDQ2NCAzNDcuMDk1IDc0LjkzMTFWNDAuNTYzNUgzNjAuMjU4VjczLjU5MDVDMzYwLjI1OCA3OS42ODQxIDM2MS40NzYgODQuMzE1MiAzNjMuOTE0IDg3LjQ4MzhDMzY2LjM1MSA5MC42NTI1IDM2OS44ODUgOTIuMjM2OCAzNzQuNzYgOTIuMjM2OEMzNzkuNzU3IDkyLjIzNjggMzgzLjY1NyA5MC40MDg3IDM4Ni41ODIgODYuNzUyNkMzODkuMzg1IDgzLjA5NjUgMzkwLjg0NyA3Ny45Nzc5IDM5MC44NDcgNzEuNTE4N1Y0MC41NjM1SDQwNC4wMDlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0zMjkuMTUzIDk3LjU5ODlDMzI0LjAzNSAxMDEuNzQzIDMxNy41NzUgMTAzLjY5MiAzMDkuNzc2IDEwMy42OTJDMzAzLjU2IDEwMy42OTIgMjk4LjA3NiAxMDIuNDc0IDI5My40NDUgOTkuNzkyNkMyODguNjkyIDk3LjExMTQgMjg1LjAzNiA5My4zMzM0IDI4Mi40NzYgODguNDU4NkMyNzkuOTE3IDgzLjU4MzcgMjc4LjY5OCA3Ny45Nzc3IDI3OC42OTggNzEuNjQwNEMyNzguNjk4IDY1LjMwMzEgMjc5LjkxNyA1OS44MTg5IDI4Mi41OTggNTQuOTQ0QzI4NS4xNTggNTAuMTkxMSAyODguODE0IDQ2LjUzNDkgMjkzLjU2NyA0My44NTM4QzI5OC4zMiA0MS4xNzI2IDMwMy44MDQgMzkuODMyIDMxMC4xNDEgMzkuODMyQzMxNy45NDEgMzkuODMyIDMyNC4yNzggNDEuOTAzOCAzMjkuMjc1IDQ2LjA0NzVDMzM0LjE1IDUwLjE5MTEgMzM3LjMxOCA1NS42NzUzIDMzOC41MzcgNjIuNzQzOEgzMjVDMzI0LjAzNSA1OS4yMDk1IDMyMi4zMjggNTYuNDA2NSAzMTkuNjQ3IDU0LjIxMjhDMzE2Ljk2NiA1Mi4xNDEgMzEzLjY3NSA1MS4wNDQyIDMwOS43NzYgNTEuMDQ0MkMzMDQuNDEzIDUxLjA0NDIgMzAwLjE0OCA1Mi45OTQxIDI5Ni45NzkgNTYuNzcyMUMyOTMuODEgNjAuNjcyIDI5Mi4yMjYgNjUuNTQ2OCAyOTIuMjI2IDcxLjY0MDRDMjkyLjIyNiA3Ny44NTU4IDI5My44MSA4Mi44NTI1IDI5Ni45NzkgODYuNzUyNEMzMDAuMTQ4IDkwLjY1MjMgMzA0LjQxMyA5Mi40ODAzIDMwOS43NzYgOTIuNDgwM0MzMTMuNzk3IDkyLjQ4MDMgMzE3LjIxIDkxLjUwNTQgMzE5Ljg5MSA4OS4zMTE3QzMyMi41NzIgODcuMTE4IDMyNC4yNzggODQuMTkzMSAzMjUuMTMxIDgwLjUzN0gzMzguNTM3QzMzNy4zMTggODcuODQ5MiAzMzQuMTUgOTMuNDU1MyAzMjkuMTUzIDk3LjU5ODlaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0xNDQuMzkyIDE3LjY1MTRIMjAwLjA4N1YzMC4wODIySDE1OC40MDdWNTMuNzI1MkgxOTIuNzc0VjY1Ljc5MDRIMTU4LjQwN1Y5MC41MzAzSDIwMS41NDlWMTAyLjk2MUgxNDQuMzkyVjE3LjY1MTRaIiBmaWxsPSIjMTcxODFEIi8+CjxwYXRoIGQ9Ik0yNjIuOTAyIDQ2LjY1NjhDMjY3LjUzMyA1MS4yODc5IDI2OS45NyA1OC42MDAyIDI2OS45NyA2OC41OTM2VjEwMi45NjFIMjU2LjY4NlY2OS4zMjQ4QzI1Ni42ODYgNjMuNDc1IDI1NS4zNDYgNTguOTY1OCAyNTIuOTA4IDU1Ljc5NzFDMjUwLjM0OSA1Mi43NTA0IDI0Ni42OTMgNTEuMTY2IDI0MS44MTggNTEuMTY2QzIzNi41NzcgNTEuMTY2IDIzMi40MzQgNTIuOTk0MSAyMjkuNTA5IDU2LjY1MDJDMjI2LjU4NCA2MC4zMDY0IDIyNS4xMjIgNjUuMTgxMiAyMjUuMTIyIDcxLjUxODVWMTAyLjk2MUgyMTEuOTU5VjQwLjU2MzNIMjIzLjQxNUwyMjQuODc4IDQ4LjcyODZDMjI5LjUwOSA0Mi44Nzg4IDIzNi4yMTIgMzkuODMyIDI0NC44NjUgMzkuODMyQzI1Mi4xNzcgMzkuODMyIDI1OC4yNyA0Mi4xNDc2IDI2Mi45MDIgNDYuNjU2OFoiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDUgNjAuMDAxMkw5Ni4wMDQ3IDQ4LjAwMUg4NC4wMDQ1SDQ4LjAwMzhIMzYuMDAzNUgyNC4wMDMzSDE2LjIzMTlDMTQuODk5OSA0OC4wMDEgMTMuNDA5NSA0OC4zNzc4IDEyLjAwMyA0OS4wMTE0QzEwLjY2NjIgNDkuNjEzOCA5LjQwNjE5IDUwLjQ0OSA4LjQyOTM3IDUxLjQxMTVDOC4zODg1NyA1MS40NDk5IDguMzQ3NzcgNTEuNDg4MiA4LjMwOTM3IDUxLjUyNjZMMy40NTQwNSA1Ni40ODA0QzMuNDM0ODUgNTYuNDk5NiAzLjQyMDQ1IDU2LjUxODcgMy40MDEyNSA1Ni41MzU1QzIuNDE0ODMgNTcuNTUzMiAxLjYyNzYyIDU4LjcyOTIgMS4wNTg4MSA1OS45OTg4QzAuMzY5OTkyIDYxLjUzNDkgMC4wMDI4MDc2MiA2My4yMTI1IDAuMDAyODA3NjIgNjQuOTI4NVY3MS45OTkxVjk1Ljk5OTVWMTAzLjA3QzAuMDAyODA3NjIgMTA0Ljc4NiAwLjM2OTk5MiAxMDYuNDYxIDEuMDU4ODEgMTA4QzEuNTEyNDEgMTA5LjAxMyAyLjEwNTIyIDEwOS45NjMgMi44MjUyNCAxMTAuODIyQzMuMDI0NDQgMTExLjA2IDMuMjMzMjcgMTExLjI5NSAzLjQ1MTY4IDExMS41MThMOC4zMDY5NyAxMTYuNDcyQzguNjgzNzggMTE2Ljg1NiA5LjEwNjE4IDExNy4yMjEgOS41NjIxOSAxMTcuNTYyQzEwLjMwNjIgMTE4LjExNiAxMS4xMzY2IDExOC42MDEgMTIuMDAwNiAxMTguOTlDMTMuNDA3MSAxMTkuNjIzIDE0Ljg5NzUgMTIwIDE2LjIyNzEgMTIwSDk1Ljk5OTlWMTA4Vjk1Ljk5OTVIMzUuOTk4N0gyMy45OTg1VjcxLjk5OTFIMzUuOTk4N0g0Ny45OTlINTkuOTk5Mkg2Ny4yNDk3QzY5LjQwNSA3MS45OTkxIDcxLjQ5NzggNzEuMzg5NCA3My4zMDAyIDcwLjI2ODZDNzMuMzMxNCA3MC4yNDk0IDczLjM2MjcgNzAuMjI3OCA3My4zOTYzIDcwLjIwODZDNzMuNDc3OSA3MC4xNTU4IDczLjU2MTkgNzAuMTA1NCA3My42NDM1IDcwLjA1MDJDNzQuNjIwMyA2OS40MTE4IDc1LjQ5ODcgNjguNjM2NiA3Ni4yNDk5IDY3Ljc0ODZMODMuOTk5NyA1OS45OTg4TDg0LjAwNDUgNjAuMDAxMloiIGZpbGw9IiMxNzE4MUQiLz4KPHBhdGggZD0iTTg0LjAwNDEgMEgxNi4yMzE1QzEzLjU4MTkgMCAxMC4zMDM0IDEuNDkyODMgOC4zMDY1NiAzLjUyODA3TDMuNDUxMjcgOC40ODE3N0MxLjI0MDgzIDEwLjczNzggMCAxMy43NzE1IDAgMTYuOTI5OVYyNC4wMDA1SDk2LjAwMTlWMEg4NC4wMDE3SDg0LjAwNDFaIiBmaWxsPSIjMTcxODFEIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNjZfMTE1Ij4KPHJlY3Qgd2lkdGg9IjU0OCIgaGVpZ2h0PSIxMjAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" alt="Encube" style="height:24px;display:block;" /></div>
 </nav>
 
 <section class="hero dot-grid-hero" id="top">
@@ -249,7 +245,7 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
   <div class="hero-meta">
     <div class="hero-meta-item">
       <span class="hero-meta-label">Dates</span>
-      <span class="hero-meta-value">April 19-24, 2026</span>
+      <span class="hero-meta-value">April 19–24, 2026</span>
     </div>
     <div class="hero-meta-item">
       <span class="hero-meta-label">Location</span>
@@ -259,14 +255,10 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
       <span class="hero-meta-label">Hotel</span>
       <span class="hero-meta-value"><a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a></span>
     </div>
-    <div class="hero-meta-item">
-      <span class="hero-meta-label">RSVP latest</span>
-      <span class="hero-meta-value">March 16</span>
-    </div>
   </div>
 
   <div class="hero-cta-group">
-    <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="btn-primary">Register now →</a>
+    <a href="#schedule" class="btn-primary">View the schedule →</a>
     <a href="#faq" class="btn-ghost">Read the FAQ</a>
   </div>
 </section>
@@ -281,11 +273,229 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
     <div class="facts-grid">
       <div class="fact-card"><div class="fact-icon">✈️</div><div class="fact-label">Arrive</div><div class="fact-value">Sunday, April 19</div><div class="fact-sub">We kick off first thing Monday morning</div></div>
       <div class="fact-card"><div class="fact-icon">🏝️</div><div class="fact-label">Location</div><div class="fact-value">Palma, Mallorca</div><div class="fact-sub"><a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a></div></div>
-      <div class="fact-card"><div class="fact-icon">🏨</div><div class="fact-label">Hotel covered</div><div class="fact-value">April 19-24</div><div class="fact-sub">Sun night to Fri checkout. Extra nights on you.</div></div>
-      <div class="fact-card"><div class="fact-icon">👟</div><div class="fact-label">Depart</div><div class="fact-value">Friday, April 24</div><div class="fact-sub">Offsite ends around lunchtime</div></div>
+      <div class="fact-card"><div class="fact-icon">🏨</div><div class="fact-label">Hotel covered</div><div class="fact-value">April 19–24</div><div class="fact-sub">Sun night to Fri checkout. Extra nights on you.</div></div>
+      <div class="fact-card"><div class="fact-icon">👟</div><div class="fact-label">Depart</div><div class="fact-value">Friday, April 24</div><div class="fact-sub">Offsite ends at 10:30 Friday morning</div></div>
       <div class="fact-card"><div class="fact-icon">✉️</div><div class="fact-label">Questions?</div><div class="fact-value">Olivia or Caroline</div><div class="fact-sub">We got you 💪🏼</div></div>
-      <div class="fact-card"><div class="fact-icon">📅</div><div class="fact-label">Agenda</div><div class="fact-value">Coming soon</div><div class="fact-sub">We're working on it, stay tuned 👀</div></div>
+      <div class="fact-card"><div class="fact-icon">📅</div><div class="fact-label">Agenda</div><div class="fact-value">See below</div><div class="fact-sub">Full schedule is live 👇</div></div>
     </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="container" style="max-width:1100px;">
+    <p class="section-eyebrow">Schedule</p>
+    <h2 class="section-title">The week ahead</h2>
+    <p class="section-desc" style="margin-bottom:0;">April 19–24 in Palma. Here's what to expect.</p>
+
+    <div class="schedule-grid">
+
+      <!-- MONDAY Apr 20 -->
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Monday</div>
+          <div class="schedule-day-date">April 20</div>
+        </div>
+        <div class="schedule-events">
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">09:00 – 12:30</div>
+            <div class="sched-event-title">🎉 Company session</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-lunch">
+            <div class="sched-event-time">12:30 – 13:30</div>
+            <div class="sched-event-title">🍔 Lunch</div>
+            <div class="sched-event-sub">Hotel Feliz</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">13:30 – 17:00</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-free">
+            <div class="sched-event-time">17:00 – 20:00</div>
+            <div class="sched-event-title">🐢 Free time</div>
+          </div>
+          <div class="sched-event ev-transfer">
+            <div class="sched-event-time">18:00 – 18:30</div>
+            <div class="sched-event-title">🚌 Transfer from hotel</div>
+          </div>
+          <div class="sched-event ev-dinner ev-optional">
+            <div class="sched-event-time">18:30 – 20:00</div>
+            <div class="sched-event-title">🍽️ Dinner</div>
+            <div class="sched-event-sub">Optional · Location TBA</div>
+          </div>
+          <div class="sched-event ev-activity ev-optional">
+            <div class="sched-event-time">20:30 – 22:30</div>
+            <div class="sched-event-title">🎬 Movie night</div>
+            <div class="sched-event-sub">Optional · Hotel Feliz</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUESDAY Apr 21 -->
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Tuesday</div>
+          <div class="schedule-day-date">April 21</div>
+        </div>
+        <div class="schedule-events">
+          <div class="sched-event ev-activity ev-optional">
+            <div class="sched-event-time">07:45</div>
+            <div class="sched-event-title">🏃 Morning run with Kristján</div>
+            <div class="sched-event-sub">Optional · Meet at Hotel Feliz</div>
+          </div>
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">09:00 – 12:30</div>
+            <div class="sched-event-title">🏆 Hackathon</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-lunch">
+            <div class="sched-event-time">12:30 – 13:30</div>
+            <div class="sched-event-title">🍔 Lunch</div>
+            <div class="sched-event-sub">Self-selected</div>
+          </div>
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">13:30 – 16:50</div>
+            <div class="sched-event-title">🏆 Hackathon (continued)</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-free">
+            <div class="sched-event-time">16:45 – 18:00</div>
+            <div class="sched-event-title">🐢 Free time</div>
+          </div>
+          <div class="sched-event ev-transfer">
+            <div class="sched-event-time">18:00</div>
+            <div class="sched-event-title">🚌 Transfer from hotel</div>
+          </div>
+          <div class="sched-event ev-activity">
+            <div class="sched-event-time">18:30 – 21:00</div>
+            <div class="sched-event-title">Company activity 🤫</div>
+            <div class="sched-event-sub">Secret</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEDNESDAY Apr 22 -->
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Wednesday</div>
+          <div class="schedule-day-date">April 22</div>
+        </div>
+        <div class="schedule-events">
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">09:00 – 11:00</div>
+            <div class="sched-event-title">🏆 Hackathon demo</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">11:00 – 12:30</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-lunch">
+            <div class="sched-event-time">12:30 – 16:00</div>
+            <div class="sched-event-title">🐢 Lunch + free time</div>
+            <div class="sched-event-sub">Self-selected</div>
+          </div>
+          <div class="sched-event ev-activity ev-optional">
+            <div class="sched-event-time">14:00</div>
+            <div class="sched-event-title">🥾 Hike with Mike</div>
+            <div class="sched-event-sub">Optional · Meet at Hotel Feliz</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">16:00 – 19:00</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-free">
+            <div class="sched-event-time">19:00 – 22:00</div>
+            <div class="sched-event-title">🐢 Free time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THURSDAY Apr 23 -->
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Thursday</div>
+          <div class="schedule-day-date">April 23</div>
+        </div>
+        <div class="schedule-events">
+          <div class="sched-event ev-activity ev-optional">
+            <div class="sched-event-time">07:45</div>
+            <div class="sched-event-title">🏃 Morning run with Mike G</div>
+            <div class="sched-event-sub">Optional · Meet at Hotel Feliz</div>
+          </div>
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">09:00 – 10:30</div>
+            <div class="sched-event-title">💛 Company session</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">10:30 – 12:30</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-lunch">
+            <div class="sched-event-time">12:30 – 13:30</div>
+            <div class="sched-event-title">🍔 Lunch</div>
+            <div class="sched-event-sub">Self-selected</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">13:30 – 16:30</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-free">
+            <div class="sched-event-time">16:30 – 18:00</div>
+            <div class="sched-event-title">🐢 Free time</div>
+          </div>
+          <div class="sched-event ev-activity">
+            <div class="sched-event-time">18:00 – 19:30</div>
+            <div class="sched-event-title">🎉 Pre-drink + secret activity</div>
+            <div class="sched-event-sub">Hotel Feliz</div>
+          </div>
+          <div class="sched-event ev-transfer">
+            <div class="sched-event-time">19:30 – 20:00</div>
+            <div class="sched-event-title">🚌 Transfer from hotel</div>
+          </div>
+          <div class="sched-event ev-dinner">
+            <div class="sched-event-time">20:00 – 22:00</div>
+            <div class="sched-event-title">🥂 Team dinner</div>
+            <div class="sched-event-sub"><a href="https://hotelsantfrancesc.com/es/gastronomia/restaurante-quadrat/" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Sant Francesc</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRIDAY Apr 24 -->
+      <div class="schedule-day">
+        <div class="schedule-day-header">
+          <div class="schedule-day-name">Friday</div>
+          <div class="schedule-day-date">April 24</div>
+        </div>
+        <div class="schedule-events">
+          <div class="sched-event ev-joint">
+            <div class="sched-event-time">09:00 – 09:40</div>
+            <div class="sched-event-title">💜 Wrap-up</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-work">
+            <div class="sched-event-time">09:40 – 10:30</div>
+            <div class="sched-event-title">Work time / Team time</div>
+            <div class="sched-event-sub">Hotel Feliz · Conference room</div>
+          </div>
+          <div class="sched-event ev-joint" style="background: rgba(255,213,170,0.7); border: 1.5px solid rgba(125,57,237,0.2);">
+            <div class="sched-event-time">10:30</div>
+            <div class="sched-event-title">🏁 Offsite ends</div>
+            <div class="sched-event-sub">Safe travels everyone! 🌊</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top:18px; font-size:12px; color:#9299A7; letter-spacing:-0.01em;">* Dashed borders = optional. Full agenda details may be updated. · All times are CET — same timezone in both Stockholm and Palma.</p>
   </div>
 </section>
 
@@ -305,7 +515,7 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">When do I need to arrive? And when can I book my return flight?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
-        <div class="faq-answer"><strong>Arrival:</strong> Sunday, April 19, we'll start first thing Monday morning.<br><br><strong>Departure:</strong> Friday, April 24, in the afternoon. The offsite ends around lunchtime.</div>
+        <div class="faq-answer"><strong>Arrival:</strong> Sunday, April 19, we'll start first thing Monday morning.<br><br><strong>Departure:</strong> Friday, April 24. The offsite ends at 10:30, so you can book your return flight for any time Friday afternoon.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">How and when should I book my travel?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
@@ -313,7 +523,7 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">What will the agenda look like (work vs. social time)?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
-        <div class="faq-answer">We know you're curious! 👀 We're working on this and will let you know as soon as possible.</div>
+        <div class="faq-answer">Check the schedule above for the full breakdown. There's a solid mix of company sessions, team time, social activities and free time across the week.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">Who should I contact if I have questions?<svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5L10 12.5L15 7.5"/></svg></div>
@@ -333,38 +543,25 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
     <h2 class="section-title">Things to do around the hotel</h2>
     <p class="section-desc" style="margin-bottom:32px;">Our picks around <a href="https://www.hotelfeliz.com/" target="_blank" style="color:#7D39ED;text-decoration:underline;text-decoration-color:rgba(125,57,237,0.5);text-underline-offset:2px;">Hotel Feliz</a> — distances are walking distance from the hotel.</p>
     <div class="guide-grid"><div class="guide-canvas">
-      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-4deg);left:2%;top:3%;"><div class="guide-card-body"><div class="guide-card-tag">🏰 Hike</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Castillo+de+Bellver/@39.5638434,2.6194231,15z/data=!4m6!3m5!1s0x12979271143eb477:0xc8d6aed330d9ffa1!8m2!3d39.5638434!4d2.6194231!16zL20vMGxranY?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Castell de Bellver</a></div><div class="guide-card-desc">A nice hike from the hotel to an ancient castle surrounded by walls and trees. 4€ entrance.</div><div class="guide-card-dist">0.6 km away</div></div></div>
-      <div class="guide-card" style="background:#65F1AD;transform:rotate(3deg);left:30%;top:0%;"><div class="guide-card-body"><div class="guide-card-tag">🥾 Viewpoint</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Mirador+del+Castillo+de+Bellver/@39.5643281,2.6207516,15z/data=!4m14!1m7!3m6!1s0x12979271143eb477:0xc8d6aed330d9ffa1!2sCastillo+de+Bellver!8m2!3d39.5638434!4d2.6194231!16zL20vMGxranY!3m5!1s0x129793bdb44d982f:0x2cd7c6c0e2807b21!8m2!3d39.5643281!4d2.6207516!16s%2Fg%2F11pcmxrf8m?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Viewpoint & Hike</a></div><div class="guide-card-desc">Walk in the forest surrounding Castell de Bellver and take in the views from the viewpoint. Free.</div><div class="guide-card-dist">0.6 km away</div></div></div>
-      <div class="guide-card" style="background:#65A9F1;transform:rotate(-2deg);left:60%;top:1%;"><div class="guide-card-body"><div class="guide-card-tag">🌅 Morning walk</div><div class="guide-card-title"><a href="https://www.google.com/maps/search/39.560097,+2.627013?entry=tts&g_ep=EgoyMDI2MDEyMS4wIPu8ASoASAFQAw%3D%3D&skid=f905af19-dd5e-4591-8a8a-87ca33ff4a14" target="_blank" style="color:#7D39ED;text-decoration:none;">Seafront Promenade</a></div><div class="guide-card-desc">Just a 5-minute walk from the hotel. A relaxed stroll along the waterfront. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
-      <div class="guide-card" style="background:#F5C383;transform:rotate(5deg);left:84%;top:2%;"><div class="guide-card-body"><div class="guide-card-tag">⛪ Cathedral</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Catedral-Bas%C3%ADlica+de+Santa+Mar%C3%ADa+de+Mallorca/@39.5655231,2.6500923,16z/data=!4m6!3m5!1s0x129792457daf8f55:0x540c9be89afd81aa!8m2!3d39.5674251!4d2.6482994!16zL20vMDdua3du?entry=tts&g_ep=EgoyMDI0MTAyMC4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Basílica de Santa María</a></div><div class="guide-card-desc">Palma's iconic cathedral, right by the sea. 10€ entrance.</div><div class="guide-card-dist">2.2 km away</div></div></div>
+      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-4deg);left:2%;top:3%;"><div class="guide-card-body"><div class="guide-card-tag">🏰 Hike</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Castillo+de+Bellver/@39.5638434,2.6194231,15z" target="_blank" style="color:#7D39ED;text-decoration:none;">Castell de Bellver</a></div><div class="guide-card-desc">A nice hike from the hotel to an ancient castle surrounded by walls and trees. 4€ entrance.</div><div class="guide-card-dist">0.6 km away</div></div></div>
+      <div class="guide-card" style="background:#65F1AD;transform:rotate(3deg);left:30%;top:0%;"><div class="guide-card-body"><div class="guide-card-tag">🥾 Viewpoint</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Mirador+del+Castillo+de+Bellver/@39.5643281,2.6207516,15z" target="_blank" style="color:#7D39ED;text-decoration:none;">Viewpoint & Hike</a></div><div class="guide-card-desc">Walk in the forest surrounding Castell de Bellver and take in the views from the viewpoint. Free.</div><div class="guide-card-dist">0.6 km away</div></div></div>
+      <div class="guide-card" style="background:#65A9F1;transform:rotate(-2deg);left:60%;top:1%;"><div class="guide-card-body"><div class="guide-card-tag">🌅 Morning walk</div><div class="guide-card-title"><a href="https://www.google.com/maps/search/39.560097,+2.627013" target="_blank" style="color:#7D39ED;text-decoration:none;">Seafront Promenade</a></div><div class="guide-card-desc">Just a 5-minute walk from the hotel. A relaxed stroll along the waterfront. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#F5C383;transform:rotate(5deg);left:84%;top:2%;"><div class="guide-card-body"><div class="guide-card-tag">⛪ Cathedral</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Catedral-Bas%C3%ADlica+de+Santa+Mar%C3%ADa+de+Mallorca/@39.5655231,2.6500923,16z" target="_blank" style="color:#7D39ED;text-decoration:none;">Basílica de Santa María</a></div><div class="guide-card-desc">Palma's iconic cathedral, right by the sea. 10€ entrance.</div><div class="guide-card-dist">2.2 km away</div></div></div>
       <div class="guide-hotel-center">
         <div class="guide-hotel-emoji">🏨</div>
         <a href="https://www.hotelfeliz.com/" target="_blank" class="guide-hotel-name" style="text-decoration:none;">📍 Hotel Feliz</a>
       </div>
-      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2.5deg);left:8%;top:40%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Parc+de+la+Mar/@39.5655231,2.6500923,16z/data=!4m6!3m5!1s0x129793fa51267ab9:0xb8111034ca7db41d!8m2!3d39.5655231!4d2.6500923!16s%2Fg%2F122fjlv0?entry=tts&g_ep=EgoyMDI0MTAyMC4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Parc de La Mar</a></div><div class="guide-card-desc">A lovely park right next to the Cathedral with views over the bay. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
-      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-3.5deg);left:76%;top:42%;"><div class="guide-card-body"><div class="guide-card-tag">🏛️ Architecture</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Royal+Palace+of+La+Almudaina/@39.5676435,2.6448713,16.49z/data=!4m6!3m5!1s0x1297924fe7f39a33:0x190ce2760a8aa900!8m2!3d39.5675708!4d2.64677!16s%2Fm%2F04f0s1t?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Palacio de la Almudaina</a></div><div class="guide-card-desc">The King's summer residence. Beautiful architecture visible from outside.</div><div class="guide-card-dist">2.0 km away</div></div></div>
-      <div class="guide-card" style="background:#65A9F1;transform:rotate(4deg);left:1%;top:76%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/S'Hort+del+Rei/@39.568073,2.6439121,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924503b729db:0x6d8132b42927a162!8m2!3d39.568073!4d2.646487!16s%2Fg%2F11bvsrqdp5?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">S'Hort del Rei</a></div><div class="guide-card-desc">A public park with fountains and trees right in the city centre. Free.</div><div class="guide-card-dist">2.0 km away</div></div></div>
-      <div class="guide-card" style="background:#65F1AD;transform:rotate(-1.5deg);left:28%;top:80%;"><div class="guide-card-body"><div class="guide-card-tag">🪨 Old Town</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Carrer+de+l'Estudi+General,+Centre,+07001+Palma,+Illes+Balears/@39.5683154,2.6464679,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924f8897f0a1:0x8bb7dd72cbac5418!8m2!3d39.5683154!4d2.6490428!16s%2Fg%2F11xdf2vxh?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Historical City Centre</a></div><div class="guide-card-desc">Narrow streets, stone buildings, shops and more. Start at Carrer de l'Estudi General.</div><div class="guide-card-dist">2.3 km away</div></div></div>
-      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2deg);left:58%;top:78%;"><div class="guide-card-body"><div class="guide-card-tag">🏙️ Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pl.+Major,+Centre,+Palma,+Illes+Balears/@39.5714082,2.649164,17z/data=!3m1!4b1!4m6!3m5!1s0x12979251b7ea3b15:0x71d0e4656460f1ea!8m2!3d39.5714082!4d2.6517389!16s%2Fg%2F11xmwml_s?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza Mayor</a></div><div class="guide-card-desc">The main square of Palma — great for people watching and a coffee break.</div><div class="guide-card-dist">2.6 km away</div></div></div>
-      <div class="guide-card" style="background:#F5C383;transform:rotate(-5deg);left:83%;top:75%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pla%C3%A7a+de+Cort,+Distrito+Centro,+07001+Palma,+Illes+Balears/@39.5697159,2.6472991,17z/data=!3m1!4b1!4m6!3m5!1s0x1297924fe7630673:0xd114e77cc940e977!8m2!3d39.5697159!4d2.649874!16s%2Fg%2F11xcprgx3?entry=tts&g_ep=EgoyMDI0MTAyMS4xIPu8ASoASAFQAw%3D%3D" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza de Cort</a></div><div class="guide-card-desc">A beautiful square with an ancient, monumental olive tree. Worth a detour.</div><div class="guide-card-dist">2.4 km away</div></div></div>
-    </div></div></div>
-
-    <div class="guide-mobile-list">
-      <div class="guide-mobile-card" style="background:#DA9CF1;"><div class="guide-card-tag">🏰 Hike</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Castillo+de+Bellver/@39.5638434,2.6194231,15z/data=!4m6!3m5!1s0x12979271143eb477:0xc8d6aed330d9ffa1!8m2!3d39.5638434!4d2.6194231!16zL20vMGxranY?entry=ttu" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Castell de Bellver</a></div><div class="guide-card-desc">Ancient castle surrounded by walls and trees. 4€ entrance.</div><div class="guide-card-dist">0.6 km away</div></div>
-      <div class="guide-mobile-card" style="background:#65F1AD;"><div class="guide-card-tag">🥾 Viewpoint</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Mirador+del+Castillo+de+Bellver/@39.5643281,2.6207516,15z" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Viewpoint & Hike</a></div><div class="guide-card-desc">Forest walk with views from the viewpoint. Free.</div><div class="guide-card-dist">0.6 km away</div></div>
-      <div class="guide-mobile-card" style="background:#65A9F1;"><div class="guide-card-tag">🌅 Morning walk</div><div class="guide-card-title"><a href="https://www.google.com/maps/search/39.560097,+2.627013" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Seafront Promenade</a></div><div class="guide-card-desc">5-minute walk from the hotel. Relaxed stroll along the waterfront. Free.</div><div class="guide-card-dist">2.3 km away</div></div>
-      <div class="guide-mobile-card" style="background:#F5C383;"><div class="guide-card-tag">⛪ Cathedral</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Catedral-Bas%C3%ADlica+de+Santa+Mar%C3%ADa+de+Mallorca/@39.5655231,2.6500923,16z" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Basílica de Santa María</a></div><div class="guide-card-desc">Palma's iconic cathedral by the sea. 10€ entrance.</div><div class="guide-card-dist">2.2 km away</div></div>
-      <div class="guide-mobile-card" style="background:#EF8D8A;"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Parc+de+la+Mar/@39.5655231,2.6500923,16z" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Parc de La Mar</a></div><div class="guide-card-desc">Lovely park next to the Cathedral with bay views. Free.</div><div class="guide-card-dist">2.3 km away</div></div>
-      <div class="guide-mobile-card" style="background:#DA9CF1;"><div class="guide-card-tag">🏛️ Architecture</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Royal+Palace+of+La+Almudaina/@39.5676435,2.6448713,16.49z" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Palacio de la Almudaina</a></div><div class="guide-card-desc">The King's summer residence. Beautiful architecture.</div><div class="guide-card-dist">2.0 km away</div></div>
-      <div class="guide-mobile-card" style="background:#65A9F1;"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/S'Hort+del+Rei/@39.568073,2.6439121,17z" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">S'Hort del Rei</a></div><div class="guide-card-desc">Public park with fountains in the city centre. Free.</div><div class="guide-card-dist">2.0 km away</div></div>
-      <div class="guide-mobile-card" style="background:#65F1AD;"><div class="guide-card-tag">🪨 Old Town</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Carrer+de+l'Estudi+General,+Centre,+07001+Palma" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Historical City Centre</a></div><div class="guide-card-desc">Narrow streets and stone buildings. Start at Carrer de l'Estudi General.</div><div class="guide-card-dist">2.3 km away</div></div>
-      <div class="guide-mobile-card" style="background:#EF8D8A;"><div class="guide-card-tag">🏙️ Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pl.+Major,+Centre,+Palma" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Plaza Mayor</a></div><div class="guide-card-desc">The main square — great for people watching and a coffee break.</div><div class="guide-card-dist">2.6 km away</div></div>
-      <div class="guide-mobile-card" style="background:#F5C383;"><div class="guide-card-tag">🌳 Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pla%C3%A7a+de+Cort,+Distrito+Centro,+07001+Palma" target="_blank" style="color:#17181D;text-decoration:none;font-weight:700;">Plaza de Cort</a></div><div class="guide-card-desc">Beautiful square with an ancient monumental olive tree.</div><div class="guide-card-dist">2.4 km away</div></div>
-    </div>
+      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2.5deg);left:8%;top:40%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Parc+de+la+Mar/@39.5655231,2.6500923,16z" target="_blank" style="color:#7D39ED;text-decoration:none;">Parc de La Mar</a></div><div class="guide-card-desc">A lovely park right next to the Cathedral with views over the bay. Free.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#DA9CF1;transform:rotate(-3.5deg);left:76%;top:42%;"><div class="guide-card-body"><div class="guide-card-tag">🏛️ Architecture</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Royal+Palace+of+La+Almudaina/@39.5676435,2.6448713,16.49z" target="_blank" style="color:#7D39ED;text-decoration:none;">Palacio de la Almudaina</a></div><div class="guide-card-desc">The King's summer residence. Beautiful architecture visible from outside.</div><div class="guide-card-dist">2.0 km away</div></div></div>
+      <div class="guide-card" style="background:#65A9F1;transform:rotate(4deg);left:1%;top:76%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Park</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/S'Hort+del+Rei/@39.568073,2.6439121,17z" target="_blank" style="color:#7D39ED;text-decoration:none;">S'Hort del Rei</a></div><div class="guide-card-desc">A public park with fountains and trees right in the city centre. Free.</div><div class="guide-card-dist">2.0 km away</div></div></div>
+      <div class="guide-card" style="background:#65F1AD;transform:rotate(-1.5deg);left:28%;top:80%;"><div class="guide-card-body"><div class="guide-card-tag">🪨 Old Town</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Carrer+de+l'Estudi+General,+Centre,+07001+Palma" target="_blank" style="color:#7D39ED;text-decoration:none;">Historical City Centre</a></div><div class="guide-card-desc">Narrow streets, stone buildings, shops and more. Start at Carrer de l'Estudi General.</div><div class="guide-card-dist">2.3 km away</div></div></div>
+      <div class="guide-card" style="background:#EF8D8A;transform:rotate(2deg);left:58%;top:78%;"><div class="guide-card-body"><div class="guide-card-tag">🏙️ Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pl.+Major,+Centre,+Palma" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza Mayor</a></div><div class="guide-card-desc">The main square of Palma — great for people watching and a coffee break.</div><div class="guide-card-dist">2.6 km away</div></div></div>
+      <div class="guide-card" style="background:#F5C383;transform:rotate(-5deg);left:83%;top:75%;"><div class="guide-card-body"><div class="guide-card-tag">🌳 Square</div><div class="guide-card-title"><a href="https://www.google.com/maps/place/Pla%C3%A7a+de+Cort,+Distrito+Centro,+07001+Palma" target="_blank" style="color:#7D39ED;text-decoration:none;">Plaza de Cort</a></div><div class="guide-card-desc">A beautiful square with an ancient, monumental olive tree. Worth a detour.</div><div class="guide-card-dist">2.4 km away</div></div></div>
+    </div></div>
   </div>
 </section>
 
-<section id="register" class="footer-cta dot-grid-dark">
+<section id="see-you" class="footer-cta dot-grid-dark">
   <span class="footer-emoji fe-1">🌴</span>
   <span class="footer-emoji fe-2">🐠</span>
   <span class="footer-emoji fe-3">🍹</span>
@@ -382,9 +579,8 @@ footer { background: #17181D; border-top: 1px solid rgba(125,57,237,0.15); paddi
   <span class="footer-emoji fe-15">🦎</span>
   <span class="footer-emoji fe-16">🪸</span>
   <div class="container">
-    <h2>Ready to set sail?</h2>
-    <p>Don't just tell, show us. Register below and we'll see you in Palma.</p>
-    <a href="https://coda.io/form/Encube-Palma-Attendee-Information_dQEPxCmQsAb" class="btn-primary">Register now →</a>
+    <h2>See you in Palma.</h2>
+    <p>Questions? Reach out to Olivia or Caroline.</p>
   </div>
 </section>
 
